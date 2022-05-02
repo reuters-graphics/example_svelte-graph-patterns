@@ -1,0 +1,45 @@
+<script>
+  import '$lib/styles/global.scss';
+  
+  import SectionTitle from '$lib/components/general/SectionTitle.svelte';
+  import Menu from '$lib/components/general/Menu.svelte';
+
+  import D3FirstGraphPattern1 from '$lib/components/graphs/D3FirstGraphPattern1/index.svelte';
+  import D3FirstGraphPattern2 from '$lib/components/graphs/D3FirstGraphPattern2/index.svelte';
+  import SvelteFirstGraphPattern1 from '$lib/components/graphs/SvelteFirstGraphPattern1/index.svelte';
+
+  import graphIcon from '$lib/assets/noun-monitoring-1320561.svg';
+  import menuItems from './menuItems'
+
+</script>
+
+<SectionTitle icon={graphIcon}>
+  <h1 slot='title'>Graphs</h1>
+</SectionTitle>
+
+<Menu menuItems={menuItems} />
+
+<D3FirstGraphPattern1 
+  id='d3-first-graph-pattern1' 
+  sectionTitle='D3 in Svelte, the D3 way - Pattern 1'
+  externalLink='https://svelte.dev/repl/3840b929acb1406dbb86e88ed85801ab?version=3.48.0'
+  externalLinkTitle='Svelte repl' 
+  internalLink='/'
+/>
+<D3FirstGraphPattern2 
+  id='d3-first-graph-pattern2' 
+  sectionTitle='D3 in Svelte, the D3 way - Pattern 2'
+  externalLink='https://svelte.dev/repl/924317731dab41e6ac808bbce7c1fab3?version=3.48.0'
+  externalLinkTitle='Svelte repl' 
+  internalLink='/'
+/>
+<SvelteFirstGraphPattern1 
+  id='svelte-first-graph-pattern1' 
+  sectionTitle='D3 in Svelte, the Svelte way - Pattern 1'
+  externalLink='https://svelte.dev/repl/d2fed3e55b0846c79d13cdb82a88510a?version=3.48.0'
+  externalLinkTitle='Svelte repl' 
+  internalLink='/'
+/>
+
+<style lang='scss'>
+</style>

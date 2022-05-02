@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400&display=swap');
+@import 'colors.scss';
+
+body {
+  background-color: $light-color;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, p, ul {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: $dark-color;
+  line-height: 1.8rem;
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin graph-border {
+  border: 0.7px solid $mid-color;
+  border-radius: 0px;
+}
+
+@mixin link {
+  color: $accent-color;
+  padding-bottom: 1.5px;
+  text-decoration: none;
+  border-bottom: 1.5px solid $accent-color;
+}
+
