@@ -5,6 +5,7 @@
   import Menu from '$lib/components/general/Menu.svelte';
 
   import SvelteScrollerFunctionality from '$lib/components/scrolly/SvelteScrollerFunctionality/index.svelte';
+  import SvelteScrollerUpdateD3 from '$lib/components/scrolly/SvelteScrollerUpdateD3/index.svelte';
   import Template from '$lib/components/template/index.svelte';
 
   import scrollyIcon from '$lib/assets/noun-blackboard-1320572.svg';
@@ -31,6 +32,15 @@
   id='svelte-scroller-functionality' 
   sectionTitle='Svelte Scroller Functionality'
   externalLink='https://svelte.dev/repl/3056fbd8f24345a8b97c6a164ac0dba4?version=3.48.0'
+  externalLinkTitle='Svelte repl' 
+  internalLink='/'
+  date='April 2022'
+/>
+
+<SvelteScrollerUpdateD3 
+  id='svelte-scroller-update-d3' 
+  sectionTitle='Svelte Scroller Update D3 Graphs'
+  externalLink='https://svelte.dev/repl/7821b1448a27485bb7ef7221d1f5cd99?version=3.48.0'
   externalLinkTitle='Svelte repl' 
   internalLink='/'
   date='April 2022'
