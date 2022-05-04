@@ -80,20 +80,20 @@
 		overflow: hidden;
 		padding: 1em;
 		height: 500px;
-    max-width: 700px;
+    	max-width: 700px;
 		margin: auto;	
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    p {
-      color: $light-color;
-      font-size: 1.4em;
-      span {
-        font-weight: bold;
-        text-decoration: underline;
-        margin-right: 5px;
-      }
-    }
+    	display: flex;
+    	flex-direction: column;
+    	justify-content: center;
+    	p {
+     	 color: $light-color;
+     	 font-size: 1.4em;
+      	span {
+        	font-weight: bold;
+        	text-decoration: underline;
+        	margin-right: 5px;
+      		}
+    	}
 	}
 	
 	/* 	Foreground */
@@ -120,6 +120,6 @@
 		color: $dark-color;
 		border: 3px solid $dark-color;
 		padding: 15px;
-    font-size: 1.2rem;
+    	font-size: 1.2rem;
 	}
 </style>

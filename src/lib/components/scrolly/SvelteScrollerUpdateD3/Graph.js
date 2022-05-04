@@ -27,19 +27,19 @@ class Chart {
 	
 	// This is also supposed to be responsive
 	setChart() {
-    const data = this.data();
-    const { width, height, index, stuff } = this.props();
-		
+		const data = this.data();
+		const { width, height, index } = this.props();
+			
 		// Dimentions - make sure you export anything needed later with a this.
-		this.margin = { top: 50, right: 20, bottom: 30, left: 60 }
+		this.margin = { top: 10, right: 10, bottom: 10, left: 10 }
 		this.boundedWidth = width - this.margin.left - this.margin.right
 		this.boundedHeight = height - this.margin.top - this.margin.bottom
 		
 		// Scales 
 		this.xScale = d3.scaleLinear()
-		.domain([0, d3.max(data, d => d.number)])
-		.range([0, this.boundedWidth])
-		
+			.domain([0, d3.max(data, d => d.number)])
+			.range([0, this.boundedWidth])
+			
 		this.yScale = d3.scaleBand()
 			.domain(data.map(d => d.id))
 			.range([0, this.boundedHeight])
@@ -47,14 +47,15 @@ class Chart {
 				
 		// Container 
 		this.svg = this.selection()
-      .appendSelect('svg')
-      .attr('width', width)
-      .attr('height', height)
-      .classed('svg', true)
-			//.style('background-color', 'pink')
+		.appendSelect('svg')
+		.attr('width', width)
+		.attr('height', height)
+		.classed('svg', true)
+		//.style('background-color', 'pink')
+
 		this.plot = this.svg
-      .appendSelect('g.plot')
-			.attr('transform', `translate(${this.margin.top}, ${this.margin.left})`)
+			.appendSelect('g.plot')
+				.attr('transform', `translate(${this.margin.left}, ${this.margin.top})`)
 		
 		// Inital plot - this will get drawn on step 0 
 		this.plotInitial = this.plot.selectAll('.bar')
@@ -71,21 +72,20 @@ class Chart {
 						.attr('width', 10)
 				},
 				exit => exit
-			)
+				)
 			.classed('bar', true)
 			.attr('x', 0)
 			.attr('y', d => this.yScale(d.id))
 			.attr('height', this.yScale.bandwidth())
-			.style('fill', 'pink')
-			.style('fill', 'pink')
-		
-		return this;
+			.style('fill', '#fff')
+			
+			return this;
 	}
 	
 	// Logic for update on step 1 - make the bars expand 
 	stepOneLogic() {
 		this.plotInitial
-		 	.interrupt()
+			.interrupt()
 			.transition().duration(500)
 			.attr('width', d => this.xScale(d.number))
 		return this
@@ -97,7 +97,7 @@ class Chart {
 			.interrupt()	
 			.attr('width', d => this.xScale(d.number))
 			.transition().duration(500)
-			.style('fill', 'rebeccapurple')
+			.style('fill', '#3d405b')
 	}
 	
 }

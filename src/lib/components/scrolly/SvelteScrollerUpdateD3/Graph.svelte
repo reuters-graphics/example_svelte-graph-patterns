@@ -11,22 +11,21 @@
 	export let width 
 	export let height
 
-  // Initialise the chart and the bound container into which it is injected
+	// Initialise the chart and the bound container into which it is injected
 	let chartContainer;
 	const chart = new Graph()
 
-  // The chart props are reactive as they depend on let-declared variables 
+	// The chart props are reactive as they depend on let-declared variables 
 	$: props = {
 		index: index,
 		width: width,
 		height: height,
 		stuff: 5
 	}
-  // Since the props are reactive, the chart update logic - which depends on props - 
+	// Since the props are reactive, the chart update logic - which depends on props - 
 	// should also happen from a reactive statement. *not* from afterUpdate which will over-fire
-	// Any logic that goes here either doesn't depend on the chartContainer already existing or 
-	// is wrapped in a conditional making sure that it does like below 
-  $: {
+	// Wrap in conditional for chartContainer existing to make sure it only fires after dom mounting
+	$: {
 			if (chartContainer) {
 				// Initially draw the chart with initial logic
 				chart.props(props).setChart()
@@ -48,8 +47,8 @@
 						chart.props(props).setChart()
 				}
 			}		
-	}
-  // Set up the graph for the first time from an onMount; any constant props 
+		}
+	// Set up the graph for the first time from an onMount; any constant props 
 	// will be correctly passed at this point
 	onMount(() => {
 		chart

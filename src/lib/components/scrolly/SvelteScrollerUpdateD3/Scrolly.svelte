@@ -14,7 +14,7 @@
 	
 	// So that we can pass the width and height of the container to the chart
 	let w;
-  let h;
+  	let h;
 
 </script>
 
@@ -40,7 +40,7 @@
     </section>
     <section>
       <div>
-        This is the third foreground section. Bars will go back to initial position.
+        This is the third foreground section. Bars will go back to initial state.
       </div>
     </section>
   </div>
@@ -48,17 +48,16 @@
 </Scroller>
 <LoremIpsum />
 
-<style>
+<style lang='scss'>
+  @import '../../../styles/global.scss';
 	* {
 		box-sizing: border-box;
-		margin: 0;
-		padding: 0;
 	}
 	
 	/* 	Background */
 	[slot="background"] {
-		border-top: 2px solid #ff3e00;
-		border-bottom: 2px solid #ff3e00;
+		border-top: 2px solid $accent-color;
+		border-bottom: 2px solid $accent-color;
 		background-color: none;
 		height: 100vh;
 		margin: auto;
@@ -68,13 +67,14 @@
 	}
 	
 	[slot="background"] .background-container {
-		background-color: hotpink;
+		background-color: $accent-color;
 		font-size: 1.4em;
 		overflow: hidden;
+		padding: 0;   	
 		height: 500px;
 		margin: auto;	
-		padding: 0;
 		width: 100%;
+		max-width: 700px;
 	}
 	
 	/* 	Foreground */
@@ -89,7 +89,7 @@
 	section {
 		height: 100vh;
 		width: 200px;
-		background-color: rgba(0,0,0,0.5);
+		background-color: rgba($dark-color, 0.5);
 		color: white;
 		padding: 0;
 		margin: 30px auto;
@@ -104,9 +104,10 @@
 	section div {
 		width: 100%;
 		background-color: white;
-		color: black;
-		border: 3px solid purple;
-		padding: 10px;
+		color: $dark-color;
+		border: 3px solid $dark-color;
+		padding: 15px;
+    	font-size: 1.2rem;
 	}
 </style>
 
