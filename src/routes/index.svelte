@@ -43,8 +43,8 @@
         </div>
         <ul>
           <li>Svelte Scroller functionality</li>
-          <li>Coming soon...</li>
-          <li>Coming soon...</li>
+          <li>Svelte Scroller with D3 charts</li>
+          <li>Svelte Scroller with GSAP for transitions</li>
         </ul>
       </a>
     </div>

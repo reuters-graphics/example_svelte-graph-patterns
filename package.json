@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
+    "build": "svelte-kit build && touch docs/.nojekyll",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
     "prepare": "svelte-kit sync",
@@ -24,6 +24,7 @@
     "@sveltejs/svelte-scroller": "^2.0.7",
     "d3": "^7.4.4",
     "d3-appendselect": "^2.0.0",
+    "gsap": "^3.10.4",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "mdsvexamples": "^0.3.0",

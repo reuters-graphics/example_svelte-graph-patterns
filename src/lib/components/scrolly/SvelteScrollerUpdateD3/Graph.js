@@ -47,11 +47,11 @@ class Chart {
 				
 		// Container 
 		this.svg = this.selection()
-		.appendSelect('svg')
-		.attr('width', width)
-		.attr('height', height)
-		.classed('svg', true)
-		//.style('background-color', 'pink')
+			.appendSelect('svg')
+			.attr('width', width)
+			.attr('height', height)
+			.classed('svg', true)
+			//.style('background-color', 'pink')
 
 		this.plot = this.svg
 			.appendSelect('g.plot')

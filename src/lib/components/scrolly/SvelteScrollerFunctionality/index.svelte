@@ -2,6 +2,8 @@
 	import Prism from 'svelte-prism'
   import '$lib/styles/global.scss';
 	import '$lib/styles/codeblocks.scss';
+  import { onMount } from 'svelte'
+  import { browser } from '$app/env';
 
   import Section from '$lib/components/general/Section.svelte'
   import NotesBox from '../../general/NotesBox.svelte'
@@ -16,6 +18,13 @@
   export let externalLink
   export let externalLinkTitle
   export let date
+
+  //const browser: boolean;
+
+  let isMounted = false
+  onMount(() => {
+    isMounted = true
+  })
 </script>
 
 
@@ -27,7 +36,11 @@
     </div>
     <Notes />
     <div class='codeblock'>
-      <Prism language="javascript">{codeblock}</Prism>
+      {#if browser && window}
+       <Prism language="javascript">{codeblock}</Prism>
+      {:else}
+        <div></div>
+      {/if}
     </div>
   </NotesBox>
   <br>

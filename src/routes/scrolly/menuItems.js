@@ -5,7 +5,11 @@ const menuItems = [
   },
   {
     anchor: '#svelte-scroller-update-d3',
-    title: 'Svelte Scroller Update D3 Graphs'
+    title: 'Svelte Scroller with D3 charts'
+  },
+  {
+    anchor: '#svelte-scroller-update-gsap',
+    title: 'Svelte Scroller with GSAP for transitions'
   }
 ]
 

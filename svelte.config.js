@@ -5,7 +5,16 @@ import sveltePreprocess from 'svelte-preprocess'
 const config = {
 	preprocess: sveltePreprocess(),
 	kit: {
-		adapter: adapter()
+		adapter: adapter({
+			pages: 'docs',
+			assets: 'docs/cdn',
+		  }),
+		vite: {
+			optimizeDeps: {
+				exclude: [],
+				include: ['svelte-prism'],
+			  },
+		}
 	}
 };
 

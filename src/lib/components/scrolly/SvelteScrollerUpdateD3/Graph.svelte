@@ -20,7 +20,6 @@
 		index: index,
 		width: width,
 		height: height,
-		stuff: 5
 	}
 	// Since the props are reactive, the chart update logic - which depends on props - 
 	// should also happen from a reactive statement. *not* from afterUpdate which will over-fire

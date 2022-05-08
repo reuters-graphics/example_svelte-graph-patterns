@@ -2,6 +2,7 @@
 	import Prism from 'svelte-prism'
   import '$lib/styles/global.scss';
 	import '$lib/styles/codeblocks.scss';
+  import { browser } from '$app/env';
 
   import Section from '$lib/components/general/Section.svelte'
   import NotesBox from '../../general/NotesBox.svelte'
@@ -26,7 +27,11 @@
     </div>
     <Notes />
     <div class='codeblock'>
-      <Prism language="javascript">{codeblock}</Prism>
+      {#if browser}
+        <Prism language="javascript">{codeblock}</Prism>
+      {:else}
+        <div></div>
+      {/if}
     </div>
   </NotesBox>
   <br>

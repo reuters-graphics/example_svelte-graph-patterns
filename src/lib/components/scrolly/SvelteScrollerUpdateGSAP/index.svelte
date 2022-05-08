@@ -8,7 +8,7 @@
   import NotesBox from '$lib/components/general/NotesBox.svelte'
 
 	import Notes from './Notes.svelte'
-  import Example from "./Example.svelte";
+  import Scrolly from "./Scrolly.svelte";
   import codeblock from './codeblocks'
 
   export let id
@@ -28,7 +28,7 @@
     </div>
     <Notes />
     <div class='codeblock'>
-      {#if browser && window}
+      {#if browser}
         <Prism language="javascript">{codeblock}</Prism>
       {:else}
         <div></div>
@@ -36,13 +36,13 @@
     </div>
   </NotesBox>
   <br>
-  <Example />
+  <Scrolly />
 </Section>
 
 
 
 <style lang="scss">
-  @import '../../styles/global.scss'; // make sure to import from the right place
+  //@import '../../../styles/global.scss'; // make sure to import from the right place
   div.codeblock {
     max-width: 700px;
     margin: auto;
