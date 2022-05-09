@@ -4,6 +4,7 @@
   import icon from '$lib/assets/noun-puzzle-1320602.svg';
   import graphIcon from '$lib/assets/noun-monitoring-1320561.svg';
   import scrollyIcon from '$lib/assets/noun-blackboard-1320572.svg';
+  import observerIcon from '$lib/assets/noun-presentation-1320578.svg'
 </script>
 
 
@@ -48,6 +49,18 @@
         </ul>
       </a>
     </div>
+    <div class='menu-item'>
+      <a href='/observer'>
+        <div class='link-section'>
+          <h3>Intersection Observer</h3>
+          <img class='menu-icon' alt="icon" src={observerIcon} />
+        </div>
+        <ul>
+          <li>Svelte Intersection Observer lazy loading</li>
+          <li>Coming soon...</li>
+        </ul>
+      </a>
+    </div>
   </div>
 
   <div class='footer'>
@@ -60,8 +73,9 @@
   @import '../lib/styles/global.scss';
 
   section.homepage-container {
-    margin: 0;
+    margin: 0 auto;
     width: 100%;
+
 
     .title-container {
       display: flex;
@@ -103,15 +117,17 @@
   /////////////////////////////////
   .menu-container {
     //background-color: $mid-light-color;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 1400px;
+    flex-wrap: wrap;
     
     .menu-item {
       width: 350px;
       background-color: $light-color;
       border: 3px solid $accent-color;
-      //border-radius: 10px;
       margin: 20px;
       padding: 30px;
       transition: all 0.7s ease;
@@ -164,13 +180,13 @@
   .footer {
     margin: 100px 0 0 0;
     padding: 10px;
-    background-color: $accent-color;
+    background-color: $light-color;
     display: flex;
     align-items: center;
     justify-content: center;
     p {
       font-size: 0.8rem;
-      color: $light-color;
+      color: $mid-color;
     }
   }
 </style>

@@ -11,8 +11,8 @@ const config = {
 		  }),
 		vite: {
 			optimizeDeps: {
-				exclude: [],
-				include: ['svelte-prism'],
+				exclude: ['svelte-prism'],
+				include: [],
 			  },
 		}
 	}
