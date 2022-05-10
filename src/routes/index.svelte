@@ -56,8 +56,8 @@
           <img class='menu-icon' alt="icon" src={observerIcon} />
         </div>
         <ul>
-          <li>Svelte Intersection Observer lazy loading</li>
-          <li>Coming soon...</li>
+          <li>Svelte Intersection Observer + lazy loading</li>
+          <li>Vanilla Intersection Observer</li>
         </ul>
       </a>
     </div>

@@ -33,9 +33,7 @@
     </IntersectionObserver>
   {/each}
 </section>
-<div>
-	Just some more content at the bottom 
-</div>
+
 
 <style lang="scss">
   @import '../../../styles/global.scss'; 
