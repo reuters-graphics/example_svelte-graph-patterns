@@ -5,16 +5,19 @@
   import graphIcon from '$lib/assets/noun-monitoring-1320561.svg';
   import scrollyIcon from '$lib/assets/noun-blackboard-1320572.svg';
   import observerIcon from '$lib/assets/noun-presentation-1320578.svg'
+  import Logo from '$lib/components/general/Logo.svelte';
+  
 </script>
 
 
+<Logo monocolourLogo={true}  backgroundColour='#ee3e3e' />
 <section class='homepage-container'>
   <div class='title-container'>
     <div class='title-text'>
       <h1>Svelte Patterns</h1>
       <p>
         Collection of patterns for using Svelte for graphs, scrollytelling and 
-        other useful things.
+        other useful things*.
         <br><br>
         Each pattern contains code, explanations and examples.
       </p>
@@ -65,6 +68,9 @@
 
   <div class='footer'>
     <p>Icons by Saeful Muslim from NounProject.com</p>
+    <p>
+      *Not intended as best pratices. Simply solutions found through trial and error ✨
+    !</p>
   </div>
 </section>
 
@@ -83,6 +89,10 @@
       background-color: $accent-color;
       align-items: center;
       justify-content: center;
+      @media (max-width: 700px) {
+        flex-direction: column-reverse;
+        padding: 0px;
+      }
     }
     .title-text {
       padding: 50px;
@@ -93,22 +103,32 @@
         font-size: 4rem;
         font-weight: 200;
         margin: 0 auto;
-        text-align: center;
+        text-align: left;
         line-height: 1.1;
+        @media (max-width: 700px) {
+          text-align: center;
+          font-size: 3rem;
+        }
       }
       p {
         color: $light-color;
         font-size: 1.15rem;
         letter-spacing: 0.05rem;
-        margin-top: 70px;
+        margin-top: 50px;
         max-width: 400px;
       }
     }
     img.icon {
-      width: 40vh;
+      width: 350px;
       opacity: 0.8;
       filter: invert(100%);
       margin-left: 10px;
+      @media (max-width: 900px) {
+        width: 300px;
+      }
+      @media (max-width: 700px) {
+        width: 150px;
+      }
     }
   }
 
@@ -182,11 +202,14 @@
     padding: 10px;
     background-color: $light-color;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     p {
       font-size: 0.8rem;
       color: $mid-color;
+      margin: 0;
+      text-align: center;
     }
   }
 </style>
