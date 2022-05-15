@@ -3,7 +3,7 @@ import { appendSelect } from 'd3-appendselect';
 import _ from 'lodash-es';
 d3.selection.prototype.appendSelect = appendSelect;
 
-class Chart {
+class Graph {
   selection(selector) {
     if (!selector) return this._selection;
     this._selection = d3.select(selector);
@@ -26,7 +26,7 @@ class Chart {
   defaultProps = {}
 	
 	// This is also supposed to be responsive
-	setChart() {
+	setGraph() {
 		const data = this.data();
 		const { width, height, index } = this.props();
 			
@@ -102,4 +102,4 @@ class Chart {
 	
 }
 
-export default Chart
+export default Graph

@@ -1,6 +1,6 @@
 <script>
-  // Approach: Setup the chart from an onMount and then pass it any dynamic props from a reactive declaration
-	import { onMount, afterUpdate } from 'svelte'
+  // Approach: Setup the graph from an onMount and then pass it any dynamic props from a reactive declaration
+	import { onMount } from 'svelte'
 	import data from './data.js'
 	import Graph from './Graph.js'
 
@@ -11,58 +11,55 @@
 	export let width 
 	export let height
 
-	// Initialise the chart and the bound container into which it is injected
-	let chartContainer;
-	const chart = new Graph()
+	// Initialise the graph and the bound container into which it is injected
+	let graphContainer;
+	const graph = new Graph()
 
-	// The chart props are reactive as they depend on let-declared variables 
+	// The graph props are reactive as they depend on let-declared variables 
 	$: props = {
 		index: index,
 		width: width,
 		height: height,
 	}
-	// Since the props are reactive, the chart update logic - which depends on props - 
+	// Since the props are reactive, the graph update logic - which depends on props - 
 	// should also happen from a reactive statement. *not* from afterUpdate which will over-fire
-	// Wrap in conditional for chartContainer existing to make sure it only fires after dom mounting
-	$: {
-			if (chartContainer) {
-				// Initially draw the chart with initial logic
-				chart.props(props).setChart()
-				// Then update the chart based on the index
+	// Wrap in conditional for graphContainer existing to make sure it only fires after dom mounting
+	$: if (graphContainer) {
+				// Initially draw the graph with initial logic
+				graph.props(props).setGraph()
+				// Then update the graph based on the index
 				switch(index) {
 					case 0:
-						chart.props(props).setChart()
+						graph.props(props).setGraph()
 						break;
 					case 1:
-						chart.stepOneLogic()
+						graph.stepOneLogic()
 						break;
 					case 2:
-						chart.stepTwoLogic()
+						graph.stepTwoLogic()
 						break;
 					case 3:
-						chart.props(props).setChart()
+						graph.props(props).setGraph()
 						break;
 					default:
-						chart.props(props).setChart()
-				}
-			}		
+						graph.props(props).setGraph()
+				}	
 		}
 	// Set up the graph for the first time from an onMount; any constant props 
-	// will be correctly passed at this point
+	// will be correctly passed at this point, as well as the static data
 	onMount(() => {
-		chart
-			.selection(chartContainer)
+		graph
+			.selection(graphContainer)
 			.data(data)
 			.props(props)
-			.setChart()
 	})	
 </script>
 
-<div class='chart-container' bind:this="{chartContainer}"></div>
+<div class='graph-container' bind:this="{graphContainer}"></div>
 
 <style lang='scss'>
   @import '../../../styles/global.scss'; // make sure to import from the right place
-  div.chart-container {
+  div.graph-container {
 		padding: 0;
 		margin: 0;
 	}
