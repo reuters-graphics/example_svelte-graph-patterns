@@ -34,9 +34,9 @@
 				Best to just keep it at 1 to avoid the background becoming unfixed and scrolling over other elements down the page unintentionally.
 			</li>
 			<li>
-				<span class='accent'>thresold</span> -
-				Once a foreground element's top crosses this point in the viewport, it becomes 'active'.
-				E.g. if it's 0.5 that means that when a foreground element's top hits the middle of the viewport it becomes active. 
+				<span class='accent'>threshold</span> -
+				Once a foreground element crosses this point in the element's total height, it becomes 'active'.
+				E.g. if it's 0.5 that means that when a foreground element is 50% visible in the viewport, it becomes active. 
 			</li>
 		</ol>
 	</li>

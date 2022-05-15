@@ -9,10 +9,13 @@ const codeblock = `
 	
 	let top = 0; // The vertical position that the top of the foreground must scroll past before the background becomes fixed, as a proportion of window height
 	let bottom = 1; // Once the bottom of the foreground passes this point, the background becomes unfixed
-	let threshold = 0.5; // Once a foreground step's top crosses this point in the viewport, it becomes 'active'
+	let threshold = 0.5; // Once a foreground step is this much visible in viewport, it becomes 'active'
 </script>
 
-<Scroller top={top} bottom={bottom} threshold={threshold} bind:index bind:offset bind:progress bind:count>
+<Scroller 
+	top={top} bottom={bottom} threshold={threshold} 
+	bind:index bind:offset bind:progress bind:count
+>
 	  <div slot="background">
 			<div class='background-container'>
 				<p>

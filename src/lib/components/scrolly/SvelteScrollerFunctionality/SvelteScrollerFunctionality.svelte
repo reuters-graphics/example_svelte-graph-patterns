@@ -14,8 +14,7 @@
 	// Once the bottom of the foreground passes this point, the background becomes unfixed
 	// Best to just keep it at 1 to avoid the background becoming unfixed and scrolling over other elements down the page unintentionally
 	let bottom = 1;
-	// Once a foreground step's top crosses this point in the viewport, it becomes 'active'
-	// e.g. if it's 0.5 that means that when a step's top hits the middle of the viewport it becomes active
+	// Once a foreground step is this much visible in viewport, it becomes 'active'
 	let threshold = 0.5;
 
 </script>
