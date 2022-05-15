@@ -33,10 +33,10 @@ const codeblock = `
 
     // Call the axes either as reactive statements 
     // If calling from onMount, would also need to include resize event listener or
-    // call from afterUpdate as well as otherwise graph won't be responsive when w and h change
-    $: d3.select(xAxisContainer).call(xAxis)
-    $: d3.select(yAxisContainer).call(yAxis).call(g => g.select('.domain').remove())
-
+    // call from afterUpdate as well, as otherwise graph won't be responsive when w and h change
+    $: if (xAxisContainer) d3.select(xAxisContainer).call(xAxis)
+    $: if (yAxisContainer) d3.select(yAxisContainer).call(yAxis).call(g => g.select('.domain').remove())
+  
   </script>
 
   <div

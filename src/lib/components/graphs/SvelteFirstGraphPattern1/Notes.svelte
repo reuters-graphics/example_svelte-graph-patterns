@@ -1,6 +1,6 @@
 <p class='summary'>
   Minimal example of how to use Svelte for svg graphs, using D3 only for helper functions (e.g. scales) and for axes. 
-  Graph is responsive based on the width od the container and uses only reactive declarations and statements.
+  Graph is responsive based on the width of the container and uses only reactive declarations and statements.
 </p>
 	
 <h3>Main points</h3>
