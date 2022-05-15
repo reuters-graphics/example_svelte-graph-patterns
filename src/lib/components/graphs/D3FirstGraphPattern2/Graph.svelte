@@ -1,6 +1,6 @@
 <script>
 	import '$lib/styles/global.scss';
-	import { onMount, afterUpdate } from 'svelte';
+	import { onMount } from 'svelte';
 	import data from './data';
 	import Graph from './Graph.js'
 	
@@ -8,35 +8,32 @@
 		margin: { top: 50, right: 20, bottom: 30, left: 60 },
 	}
 	
-	// Initialise the chart and the bound container into which it is injected
-	let chartContainer;
-	const chart = new Graph()
+	// Initialise the graph and the bound container into which it is inserted
+	let graphContainer;
+	const graph = new Graph()
 
 	// This works exactly the same as the previous approach but we need an extra event listener for 
-	// resize and then internal to the chart logic to adjust properties based on width
-	const resize = () => chart.draw();
+	// resize and then internal to the graph logic to adjust properties based on width
+	const resize = () => graph.draw();
   onMount(() => {
-    chart.selection(chartContainer).data(data).props(props).draw();
+    graph.selection(graphContainer).data(data).props(props).draw();
     if (window) window.addEventListener('resize', resize);
     return () => {
       window.removeEventListener('resize', resize);
     };
   });
-	
-	// However, if any of the props passed to the chart change we also need an afterUpdate 
-	// which might end up firing more than required 
 
 </script>
 
 
-<div class="chart-container" bind:this={chartContainer}>
+<div class="graph-container" bind:this={graphContainer}>
 	<div class='graph-note'>resize window to see responsiveness</div>
 </div>
 
 
 <style lang="scss">
 	@import '../../../styles/global.scss';
-	div.chart-container {
+	div.graph-container {
     @include graph-border;
 		width: 70%;
 		max-width: 700px;

@@ -9,28 +9,29 @@ const codeblock = `
     }
     
     // 2. Initialise the graph and the bound container into which it is injected
-    let chartContainer;
-    const chart = new Graph()
+    let graphContainer;
+    const graph = new Graph()
 
     // 3. Define resize event; Note that the logic for changing the graph 
     // based on width is inside the draw method of the graph class itself
-    const resize = () => chart.draw();
+    const resize = () => graph.draw();
 
     // 4. Draw the graph on mount and add event listener for resize
     onMount(() => {
-      chart.selection(chartContainer).data(data).props(props).draw();
+      graph.selection(graphContainer).data(data).props(props).draw();
       if (window) window.addEventListener('resize', resize);
       return () => {
         window.removeEventListener('resize', resize);
       };
     });
     
-    // 4. If any of the props passed to the chart change we'd also need an afterUpdate 
+    // 4. If any of the props passed to the graph change 
+    // we'd also need an afterUpdate or a reactive declaration 
 
     ...
   </script>
 
-  <div class="chart-container" bind:this={chartContainer}></div>
+  <div class="graph-container" bind:this={graphContainer}></div>
 
   // From the Graph.js file
   ...
