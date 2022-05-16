@@ -11,7 +11,7 @@
 	let bottom = 1;
 	let threshold = 0.5;
 	
-	// So that we can pass the width and height of the container to the chart
+	// So that we can pass the width and height of the container to the graph
 	let w;
   	let h;
 
@@ -20,7 +20,7 @@
 <Scroller top={top} bottom={bottom} threshold={threshold} bind:index bind:offset bind:progress bind:count>
 	
   <div slot="background">
-    <section class='background-container chart' bind:clientWidth={w} bind:clientHeight={h}>
+    <section class='background-container graph' bind:clientWidth={w} bind:clientHeight={h}>
       <Graph index={index} offset={offset} progress={progress} width={w} height={h} />
     </section>
   </div>

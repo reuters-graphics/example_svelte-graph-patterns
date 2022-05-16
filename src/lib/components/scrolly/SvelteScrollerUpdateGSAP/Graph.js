@@ -6,7 +6,7 @@ import {gsap}  from "gsap/dist/gsap";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger"; 
 gsap.registerPlugin(ScrollTrigger);
 
-class Chart {
+class Graph {
   selection(selector) {
     if (!selector) return this._selection;
     this._selection = d3.select(selector);
@@ -30,7 +30,7 @@ class Chart {
 	
 
   // Define what the graph is supposed to look like initially
-  setChart() {
+  setGraph() {
     const data = this.data();
     const { width, height, fillBright } = this.props();
 		
@@ -99,10 +99,9 @@ class Chart {
 		
 		ScrollTrigger.create({
 			trigger: '#step-1',
-			start: 'top center', //'top center',
+			start: 'top center', 
 			onToggle: ( {isActive} ) => { 
 				if (isActive) {
-					//console.log('step 1 is active')
 					this.stepOneLogic() 
 				  } 
 			},
@@ -179,4 +178,4 @@ class Chart {
 	
 }
 
-export default Chart
+export default Graph
