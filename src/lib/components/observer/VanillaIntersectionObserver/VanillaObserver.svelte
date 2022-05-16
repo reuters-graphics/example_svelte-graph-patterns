@@ -5,8 +5,8 @@
     threshold: 0.5,
   };
   let inView = false; // track if element is in view
-  // Callback for the observer needs to be a reactive declaration as it depends on the state inView
-  $: observerCallback = (entries) => {
+  // Callback for the observer to change the inView prop
+  const observerCallback = (entries) => {
     for (const entry of entries) {
       if (entry.isIntersecting && !inView) {
         inView = true;
@@ -15,6 +15,13 @@
       }
     }
   };
+
+  // Any logic that depends on inView needs to be ran from a reactive statement 
+  // e.g. if we wanted to draw a graph with D3 logic it would need to be called from 
+  // a reactive statement like in other examples
+  $: {
+    console.log(inView)
+  }
 
   // Instantiate the IntersectionObserver and start observing the desired element from onMount
   onMount(() => {

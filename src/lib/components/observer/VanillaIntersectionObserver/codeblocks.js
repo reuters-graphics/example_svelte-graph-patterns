@@ -6,8 +6,8 @@ const codeblock = `
     threshold: 0.5,
   };
   let inView = false; // track if element is in view
-  // Callback for the observer needs to be a reactive declaration as it depends on the state inView
-  $: observerCallback = (entries) => {
+  // Callback for the observer to change the inView prop
+  const observerCallback = (entries) => {
     for (const entry of entries) {
       if (entry.isIntersecting && !inView) {
         inView = true;
@@ -27,7 +27,6 @@ const codeblock = `
     observer.observe(elementToObserve);
   });
 
-  // Don't need an afterUpdate
 </script>
 
 <section>
