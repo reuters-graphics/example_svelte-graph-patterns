@@ -26,7 +26,7 @@
 	</li>
 	<li>
 		In this particular example there is no need to use lazy loading actually, but if we were 
-		loading really heavy chuncks of content, e.g. HTML5 canvas elements with thousands of 
+		loading really heavy chunks of content, e.g. HTML5 canvas elements with thousands of 
 		shapes drawn in each of them, it would help performance to lazy-load each canvas as it comes into view,
 		rather than trying to load all of them at once on page load/component mount. 
 	</li>
@@ -39,7 +39,7 @@
 		(See <code>.style('background', d => intersecting ? '#ee3e3e' : '#6b6065')</code> in ContentElement.)
 		<br>
 		Sidenote: The <code>threshold</code> prop of the IntersectionObserver here is 
-		not the viewport threshold, but the the proportion (0 to 1) of the intersecting element that 
+		not the viewport threshold, but the proportion (0 to 1) of the intersecting element that 
 		has to be visible in the viewport to trigger the intersecting prop to become true.
 	</li>
 	<li>
@@ -59,7 +59,7 @@
 		</ul>
 	</li>
 	<li>
-		Beware that this is buggy if the height of the intersecting elements is small enought that multiple of them fit into the viewport.
+		Beware that this is buggy if the height of the intersecting elements is small enough that multiple of them fit into the viewport.
 	</li>
 </ul>
 
