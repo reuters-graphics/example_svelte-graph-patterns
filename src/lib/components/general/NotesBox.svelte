@@ -1,7 +1,7 @@
 <script>
   import linkIcon from '$lib/assets/noun-link-1320609.svg'
   export let internalLink
-  export let date = 'April 2022'
+  export let date 
 </script>
 
 <section class='notes'>

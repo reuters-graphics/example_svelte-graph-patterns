@@ -1,5 +1,5 @@
 <script>
-	import { onMount, afterUpdate } from 'svelte'
+	import { onMount, } from 'svelte'
 	import { currentElNum } from './stores.js';
 	import * as d3 from 'd3'
 	import { appendSelect } from 'd3-appendselect';
@@ -12,41 +12,39 @@
 	let containerEl
 	
 	// Option 1: Wrap evertything in a reactive statement
-	// Draw the 'chart', with its background color based on whether the container 
+	// Draw the 'graph', with its background color based on whether the container 
 	// is intersecting (in the second IntersectionObserver) instance
-
-		$: {
-			if (containerEl) {
-				const container = d3.select(containerEl);
-				container.appendSelect('svg')
-					.attr('width', '100%')
-					.attr('height', '600px')
-					.transition().duration(500)
-					.style('background', d => intersecting ? '#ee3e3e' : '#6b6065')
-				if (intersecting) {
-					currentElNum.set(id)
-				}
-			}
+	$: {
+		if (containerEl) {
+			const container = d3.select(containerEl);
+			container.appendSelect('svg')
+				.attr('width', '100%')
+				.attr('height', '600px')
+				.transition().duration(500)
+				.style('background', d => intersecting ? '#ee3e3e' : '#6b6065')
+			if (intersecting) currentElNum.set(id)
 		}
+	}
 	
-	// Option 2: Draw the chart initially from onMount and then keep 'listening'
-	// for updates to the 'intersecting' variable from afterUpdate
-	// const drawChart = () => {
-	// 	const container = d3.select(containerEl);
-	// 	container.appendSelect('svg')
-	// 		.attr('width', '100%')
-	// 		.attr('height', '700px')
-	// 		.transition().duration(500)
-	// 		.style('background', d => intersecting ? '#ee3e3e' : '#6b6065')
-	// }
-	
+	// Option 2: Draw the graph initially from onMount and then keep 'listening'
+	// for updates to the 'intersecting' variable with a reactive declaration
+	// let container
 	// onMount(() => {
-	// 	drawChart()
+	// 	container = d3.select(containerEl)
+	// 		.appendSelect('svg')
+	// 		.attr('width', '100%')
+	// 		.attr('height', '600px')
+	// 		.style('background', d => intersecting ? '#ee3e3e' : '#6b6065')
+	// 	if (intersecting) currentElNum.set(id)
 	// })
-	// afterUpdate(() => {
-	// 	drawChart()
-	// 	if (intersecting) currentElNum.set(id);
-	// })
+	// $: {
+	// 	if (containerEl && container) {
+	// 		container.transition().duration(500)
+	// 			.style('background', d => intersecting ? '#ee3e3e' : '#6b6065')
+	// 		if (intersecting) currentElNum.set(id)
+	// 	}
+	// }
+
 	
 	// If the current element (i.e. the whole Content Element component)
 	// is intersecting the *viewport* this gets passed on as true in the 

@@ -9,33 +9,35 @@ const codeblock = `
 		...
 
 		// Need to initialise all the DOM element containers that the intersection observer 
-		// uses in its 'element' prop; Need one for each data element
-		let node0, node1, node2, node3, node4
-		const nodes = [node0, node1, node2, node3, node4] // In array so we can loop over them 
-	</script>
+		// uses in its 'element' prop; Need one for each data element: nodesLoad and nodes
+		...
 
+		let intersectingLazyLoad
+		let intersecting
+	</script>
+	
 	<section>
-	<StickyElement />
+		<StickyElement />
 		{#each data as datum, i}
-			<IntersectionObserver element="{nodes[i]}" let:intersecting threshold="{0}" once="{true}">
-					<div bind:this="{nodes[i]}">
-						{#if intersecting}
-							<div in:fade="{{ duration: 800 }}">
-								<IntersectionObserver element="{nodes[i]}" let:intersecting threshold="{0.7}" once="{false}">
+			<IntersectionObserver element="{nodesLoad[i]}" let:intersecting={intersectingLazyLoad} threshold="{0}" once="{true}">
+					<div bind:this="{nodesLoad[i]}">
+						{#if intersectingLazyLoad}
+							<IntersectionObserver element="{nodes[i]}" let:intersecting threshold="{0.7}" once="{false}">
+								<div in:fade="{{ duration: 800 }}"  bind:this="{nodes[i]}">
 									<ContentElement
 										id="{datum.id}"
 										intersecting="{intersecting}"
 										text={datum.text}
 									/>
-								</IntersectionObserver>
-							</div>
+								</div>
+							</IntersectionObserver>	
 						{:else}
 							<div class="placeholder">loading...</div>
 						{/if}
 					</div>
 			</IntersectionObserver>
 		{/each}
-	</section>
+  	</section>
 
 	/////////////////////// stores.js ////////////////////////////
 	import { writable } from 'svelte/store'

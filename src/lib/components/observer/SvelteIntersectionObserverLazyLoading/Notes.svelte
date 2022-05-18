@@ -1,7 +1,7 @@
 <p class='summary'>
 	Using IntersectionObserver via the 
 	<a href='https://github.com/metonym/svelte-intersection-observer' target='_blank'>svlete-intersection-observer library</a>
-	to lazy-load content once <strong>and</strong> trigger changes to content blocks when it comes into view 
+	to lazy-load content once <strong>and</strong> trigger changes to a content block when it comes into view 
 	(intersects), while also passing interesting element as prop to a sticky element on the page 
 	via a Svelte store.
 </p>
@@ -25,24 +25,25 @@
 		as then we will only display the DOM element if it intersects the viewport. 
 	</li>
 	<li>
-		In this particular example there is no need to use lazy loading, but if we were 
+		In this particular example there is no need to use lazy loading actually, but if we were 
 		loading really heavy chuncks of content, e.g. HTML5 canvas elements with thousands of 
 		shapes drawn in each of them, it would help performance to lazy-load each canvas as it comes into view,
 		rather than trying to load all of them at once on page load/component mount. 
 	</li>
 	<li>
-		<span class='accent'>The second (inner) one is there to affect a change 
+		<span class='accent'>The second (inner) intersection observer is there to affect a change 
 		to the already lazy-loaded element based on some different intersecting condition.</span>
 		In this case, if the element becomes 70% visible (<code>threshold="{0.7}"</code>), 
 		it will change colour. 
+		<br>
 		(See <code>.style('background', d => intersecting ? '#ee3e3e' : '#6b6065')</code> in ContentElement.)
 		<br>
-		Sidenote: The <code>threshold</code> prop of the IntersectionObserver for this library is 
+		Sidenote: The <code>threshold</code> prop of the IntersectionObserver here is 
 		not the viewport threshold, but the the proportion (0 to 1) of the intersecting element that 
 		has to be visible in the viewport to trigger the intersecting prop to become true.
 	</li>
 	<li>
-		To <span class='accent'>update the content of the sticky element:</span>
+		<span class='accent'>To update the content of the sticky element:</span>
 		<ul>
 			<li> - Initialise a <code>currentElNum</code> variable as a svelte store.</li>
 			<li>
@@ -53,7 +54,7 @@
 				<code>currentElNum</code> gets updated with the id for the data entry bound to that element.
 			</li>
 			<li>
-				- Then the StickyElement imports <code>currentElNum</code> and its content gets dynamically updated with it.
+				- Then the StickyElement imports <code>currentElNum</code> and its content gets dynamically updated based on it.
 			</li>
 		</ul>
 	</li>

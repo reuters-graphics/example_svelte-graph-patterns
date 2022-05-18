@@ -23,7 +23,7 @@
   sectionTitle='Svelte Intersection Observer lazy loading'
   externalLink='https://svelte.dev/repl/310510e6e6c3464f9518c55b6ad50f25?version=3.48.0'
   externalLinkTitle='Svelte repl' 
-  internalLink='/'
+  internalLink='https://github.com/reuters-graphics/example_svelte-graph-patterns/tree/main/src/lib/components/observer/SvelteIntersectionObserverLazyLoading'
   date='April 2022'
 />
 
@@ -32,7 +32,7 @@
   sectionTitle='Vanilla Intersection Observer'
   externalLink='https://svelte.dev/repl/d9bc0f84d467495991518091456fa01f?version=3.48.0'
   externalLinkTitle='Svelte repl' 
-  internalLink='/'
+  internalLink='https://github.com/reuters-graphics/example_svelte-graph-patterns/tree/main/src/lib/components/observer/VanillaIntersectionObserver'
   date='April 2022'
 />
 

@@ -27,15 +27,21 @@
     padding: 80px;
     margin: 0 auto 40px;
 
+    @media (max-width: 550px) {
+      flex-direction: column-reverse;
+    }
+
     & :global(h1) {
         font-family: 'Amatic SC', cursive;
         letter-spacing: 0.5rem;
+        line-height: 1.2;
         color: $light-color;
         font-size: 4rem;
         font-weight: 200;
         margin-right: 10px;
         @media (max-width: 550px) {
-          font-size: 3.5rem;
+          font-size: 3.2rem;
+          text-align: center;
         }
     }
 

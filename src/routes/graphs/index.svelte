@@ -24,21 +24,24 @@
   sectionTitle='D3 in Svelte, the D3 way - Pattern 1'
   externalLink='https://svelte.dev/repl/3840b929acb1406dbb86e88ed85801ab?version=3.48.0'
   externalLinkTitle='Svelte repl' 
-  internalLink='/'
+  internalLink='https://github.com/reuters-graphics/example_svelte-graph-patterns/tree/main/src/lib/components/graphs/D3FirstGraphPattern1'
+  date='April 2022'
 />
 <D3FirstGraphPattern2 
   id='d3-first-graph-pattern2' 
   sectionTitle='D3 in Svelte, the D3 way - Pattern 2'
   externalLink='https://svelte.dev/repl/924317731dab41e6ac808bbce7c1fab3?version=3.48.0'
   externalLinkTitle='Svelte repl' 
-  internalLink='/'
+  internalLink='https://github.com/reuters-graphics/example_svelte-graph-patterns/tree/main/src/lib/components/graphs/D3FirstGraphPattern2'
+  date='April 2022'
 />
 <SvelteFirstGraphPattern1 
   id='svelte-first-graph-pattern1' 
   sectionTitle='D3 in Svelte, the Svelte way - Pattern 1'
   externalLink='https://svelte.dev/repl/d2fed3e55b0846c79d13cdb82a88510a?version=3.48.0'
   externalLinkTitle='Svelte repl' 
-  internalLink='/'
+  internalLink='https://github.com/reuters-graphics/example_svelte-graph-patterns/tree/main/src/lib/components/graphs/SvelteFirstGraphPattern1'
+  date='April 2022'
 />
 
 <style lang='scss'>

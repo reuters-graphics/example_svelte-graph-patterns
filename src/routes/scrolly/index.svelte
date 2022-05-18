@@ -34,7 +34,7 @@
   sectionTitle='Svelte Scroller Functionality'
   externalLink='https://svelte.dev/repl/3056fbd8f24345a8b97c6a164ac0dba4?version=3.48.0'
   externalLinkTitle='Svelte repl' 
-  internalLink='/'
+  internalLink='https://github.com/reuters-graphics/example_svelte-graph-patterns/tree/main/src/lib/components/scrolly/SvelteScrollerFunctionality'
   date='April 2022'
 />
 
@@ -43,7 +43,7 @@
   sectionTitle='Svelte Scroller with D3 charts'
   externalLink='https://svelte.dev/repl/7821b1448a27485bb7ef7221d1f5cd99?version=3.48.0'
   externalLinkTitle='Svelte repl' 
-  internalLink='/'
+  internalLink='https://github.com/reuters-graphics/example_svelte-graph-patterns/tree/main/src/lib/components/scrolly/SvelteScrollerUpdateD3'
   date='April 2022'
 />
 
@@ -52,7 +52,7 @@
   sectionTitle='Svelte Scroller with GSAP for transitions'
   externalLink='https://svelte.dev/repl/a837a1df3f2c4ee19cbd06651800cc2e?version=3.48.0'
   externalLinkTitle='Svelte repl' 
-  internalLink='/'
+  internalLink='https://github.com/reuters-graphics/example_svelte-graph-patterns/tree/main/src/lib/components/scrolly/SvelteScrollerUpdateGSAP'
   date='April 2022'
 />
 

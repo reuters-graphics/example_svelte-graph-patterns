@@ -16,11 +16,12 @@
   export let internalLink 
   export let externalLink
   export let externalLinkTitle
+  export let date
 </script>
 
 
 <Section id={id}>
-  <NotesBox internalLink={internalLink}>
+  <NotesBox {internalLink} {date}>
     <h2 slot='title'>{sectionTitle}</h2>
     <div slot='external-link' class='external-link'>
       <a href={externalLink}>{externalLinkTitle}</a>
