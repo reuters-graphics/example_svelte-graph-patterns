@@ -29,7 +29,7 @@ class Chart {
 	draw() {
     const data = this.data();
     const { width, height, margin, boundedWidth, boundedHeight, fill } = this.props();
-		console.log('logging from draw function', width, height)
+	console.log('logging from draw function', width, height)
 		
 		// Scales 
 		const xScale = d3.scaleLinear()
