@@ -10,8 +10,11 @@ const config = {
 			assets: 'docs/cdn',
 		  }),
 		vite: {
+			ssr: {
+				noExternal: ['prismjs'],
+			},
 			optimizeDeps: {
-				exclude: ['svelte-prism'],
+				exclude: [],
 				include: [],
 			  },
 		}

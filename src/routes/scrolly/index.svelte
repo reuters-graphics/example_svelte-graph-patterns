@@ -7,7 +7,6 @@
   import SvelteScrollerFunctionality from '$lib/components/scrolly/SvelteScrollerFunctionality/index.svelte';
   import SvelteScrollerUpdateD3 from '$lib/components/scrolly/SvelteScrollerUpdateD3/index.svelte';
   import SvelteScrollerUpdateGSAP from '$lib/components/scrolly/SvelteScrollerUpdateGSAP/index.svelte';
-  import Template from '$lib/components/template/index.svelte';
 
   import scrollyIcon from '$lib/assets/noun-blackboard-1320572.svg';
   import menuItems from './menuItems'

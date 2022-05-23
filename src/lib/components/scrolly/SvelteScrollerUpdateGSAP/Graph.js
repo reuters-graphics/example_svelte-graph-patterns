@@ -2,8 +2,8 @@ import * as d3 from 'd3';
 import { appendSelect } from 'd3-appendselect';
 import _ from 'lodash-es';
 d3.selection.prototype.appendSelect = appendSelect;
-import {gsap}  from "gsap/dist/gsap";        
-import {ScrollTrigger} from "gsap/dist/ScrollTrigger"; 
+import {gsap}  from "gsap/dist/gsap.js";        
+import {ScrollTrigger} from "gsap/dist/ScrollTrigger.js"; 
 gsap.registerPlugin(ScrollTrigger);
 
 class Graph {
