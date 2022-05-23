@@ -1,9 +1,7 @@
 <script>
-	//import Prism from 'svelte-prism'
   import Prism from '@magidoc/plugin-svelte-prismjs'
   import '$lib/styles/global.scss';
 	import '$lib/styles/codeblocks.scss';
-  import { onMount } from 'svelte'
   import { browser } from '$app/env';
 
   import Section from '$lib/components/general/Section.svelte'
@@ -20,12 +18,6 @@
   export let externalLinkTitle
   export let date
 
-  //const browser: boolean;
-
-  let isMounted = false
-  onMount(() => {
-    isMounted = true
-  })
 </script>
 
 
@@ -38,7 +30,6 @@
     <Notes />
     <div class='codeblock'>
       {#if browser}
-       <!-- <Prism language="javascript">{codeblock}</Prism> -->
        <Prism language='javascript' source={codeblock} showCopyButton/>
       {:else}
         <div></div>

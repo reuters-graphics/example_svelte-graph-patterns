@@ -50,7 +50,7 @@ class Chart {
 			//.style('background-color', 'pink')
 		const plot = svg
       .appendSelect('g.plot')
-			.attr('transform', `translate(${margin.top}, ${margin.left})`)
+			.attr('transform', `translate(${margin.left}, ${margin.top})`)
 		
 		// Bar Chart
 		const barChart = plot.selectAll('.bar')

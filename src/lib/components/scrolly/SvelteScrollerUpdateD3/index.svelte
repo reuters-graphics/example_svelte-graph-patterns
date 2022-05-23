@@ -1,5 +1,4 @@
 <script>
-	//import Prism from 'svelte-prism'
   import Prism from '@magidoc/plugin-svelte-prismjs'
   import '$lib/styles/global.scss';
 	import '$lib/styles/codeblocks.scss';
@@ -30,7 +29,6 @@
     <Notes />
     <div class='codeblock'>
       {#if browser}
-       <!-- <Prism language="javascript">{codeblock}</Prism> -->
        <Prism language='javascript' source={codeblock} showCopyButton/>
       {:else}
         <div></div>
@@ -44,7 +42,7 @@
 
 
 <style lang="scss">
-  @import '../../../styles/global.scss'; // make sure to import from the right place
+  @import '../../../styles/global.scss'; 
   div.codeblock {
     max-width: 700px;
     margin: auto;
