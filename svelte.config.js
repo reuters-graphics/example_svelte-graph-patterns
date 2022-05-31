@@ -15,7 +15,7 @@ const config = {
 		},
 		adapter: adapter({
 			pages: 'docs',
-			assets: 'docs',
+			assets: 'docs/cdn',
 			fallback: null,
 		  }),
 		trailingSlash: 'always',
