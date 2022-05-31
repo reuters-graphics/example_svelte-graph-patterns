@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-security-policy" content="">
+	<link rel="stylesheet" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/pages/scrolly/index.svelte-d451a4bc.css">
+	<link rel="stylesheet" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/codeblocks-c4701768.css">
+	<link rel="stylesheet" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/appendSelect-b7ef42ae.css">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/start-51c74f43.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/index-3b89fb51.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/index-26d188c2.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/paths-396f020f.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/layout.svelte-e60f4ff3.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/pages/scrolly/index.svelte-8098ce12.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/codeblocks-00307bc8.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/appendSelect-1aa13c28.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/lodash.default-06a7c2fb.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/noun-blackboard-1320572-c475a461.js">
+	</head>
+	<body>
+		<div>
+
+
+<nav class="nav svelte-1noyurf" style="background: #ee3e3e;"><div class="logo-container svelte-1noyurf"><a href="https://github.com/reuters-graphics" class="svelte-1noyurf"><figure class="navbar-brand svelte-1noyurf"><img class="logo reuters-graphics svelte-1noyurf" src="https://graphics.thomsonreuters.com/style-assets/images/logos/reuters-graphics-logo/svg/graphics-logo-light.svg" alt="Reuters graphics logo"></figure></a></div>
+	
+</nav>
+<div class="section-title-container svelte-1ja2cff"><h1 slot="title">Scrolly</h1>
+  <img class="icon" alt="section icon" src="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/noun-blackboard-1320572-22669e6a.svg">
+  <a class="home" href="/example_svelte-graph-patterns"><span>home</span>
+    <img class="home-icon" alt="home icon" src="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/noun-global-1320596-31e1433f.svg"></a>
+</div>
+
+<div class="link-menu svelte-1bakbq1"><a href="#svelte-scroller-functionality" sveltekit:noscroll class="svelte-1bakbq1">Svelte Scroller functionality
+    </a><a href="#svelte-scroller-update-d3" sveltekit:noscroll class="svelte-1bakbq1">Svelte Scroller with D3 charts
+    </a><a href="#svelte-scroller-update-gsap" sveltekit:noscroll class="svelte-1bakbq1">Svelte Scroller with GSAP for transitions
+    </a>
+</div>
+
+
+
+<section class="section svelte-kf75i3" id="svelte-scroller-functionality"><section class="notes svelte-1ip1kk9"><div class="title-slot svelte-1ip1kk9"><h2 slot="title" class="svelte-knnyit">Svelte Scroller Functionality</h2>
+    <a href="https://github.com/reuters-graphics/example_svelte-graph-patterns/tree/main/src/lib/components/scrolly/SvelteScrollerFunctionality"><img class="icon svelte-1ip1kk9" alt="link icon" src="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/noun-link-1320609-43f3e9e2.svg"></a>
+    <div slot="external-link" class="external-link"><a href="https://svelte.dev/repl/3056fbd8f24345a8b97c6a164ac0dba4?version=3.48.0">Svelte repl</a></div></div>
+  <aside class="date">April 2022</aside>
+  <p class="summary">Minimal example of how  <a href="https://github.com/sveltejs/svelte-scroller" target="_blank" class="svelte-37ctpr">Svelte Scroller</a> works.
+</p>
+
+<h3>Main points</h3>
+<ul><li>Scroller parameters (can be bound to the Scroller with <code>bind</code> or as one-way binding): 
+		<ol><li><span class="accent">index</span> - Index of the currently active (= in viewport and at the correct vertical position, as determined by top, bottom and threshold params) foreground element 
+			</li>
+			<li><span class="accent">offset</span> - Float between 0 and 1 corresponding to the offset of the currently active foreground element. Value is 1 when that element becomes inactive.
+			</li>
+			<li><span class="accent">progress</span> - Float between 0 and 1 for the progress of the whole scrolly. Becomes 1 when the last foreground element has become inactive.
+			</li>
+			<li><span class="accent">top</span> - 
+				The vertical position that the top of the first foreground element must scroll past before the background becomes fixed, as a proportion of viewport height (0 to 1).
+				In the most common usecase, we want to keep this as 0 and give the background a height of 100vh, and also push the first foreground element to the &#39;top&#39;, i.e. 
+				so that the top of the first foreground element and the top of the background element align. 
+				Then the background becomes fixed in place as soon as its top aligns with the top of the viewport. 
+
+				In this example, the foreground elements each have a height of 100vh as well.
+				The foreground content is less than 100vh (see the while part with text), but the extra &#39;padding&#39; of height 
+				is what allow for the scrolly effect to happen. 
+			</li>
+			<li><span class="accent">bottom</span> -
+				Once the bottom of the last foreground element passes this point, the background becomes unfixed.
+				Best to just keep it at 1 to avoid the background becoming unfixed and scrolling over other elements down the page unintentionally.
+			</li>
+			<li><span class="accent">threshold</span> -
+				Once a foreground element crosses this point in the element&#39;s total height, it becomes &#39;active&#39;.
+				E.g. if it&#39;s 0.5 that means that when a foreground element is 50% visible in the viewport, it becomes active. 
+			</li></ol></li></ul>
+<h3>Code highlights</h3>
+    <div class="codeblock svelte-knnyit"><div></div></div>
+</section>
+  <br>
+  <p class="svelte-1fy1q7l">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+  eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+  sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+
+<svelte-scroller-outer class="svelte-xdbafy"><svelte-scroller-background-container class="background-container svelte-xdbafy" style="
+		position: absolute;
+		top: 0;
+		transform: translate(0, 0px);
+		z-index: 1;
+	"><svelte-scroller-background class="svelte-xdbafy"><div slot="background" class="svelte-13fqb27"><div class="background-container svelte-13fqb27"><p class="svelte-13fqb27">This is the background content. It will stay fixed in place while the
+					foreground scrolls over the top.
+				</p>
+				<p class="svelte-13fqb27"><span class="svelte-13fqb27">Index: </span>0, i.e. section #0 is currently active</p>
+				<p class="svelte-13fqb27"><span class="svelte-13fqb27">Offset:</span> 0</p>
+				<p class="svelte-13fqb27"><span class="svelte-13fqb27">Progress:</span> 0</p>
+				<p class="svelte-13fqb27"><span class="svelte-13fqb27">Count:</span> 0</p></div></div></svelte-scroller-background></svelte-scroller-background-container>
+
+	<svelte-scroller-foreground class="svelte-xdbafy"><div slot="foreground" class="svelte-13fqb27"><section class="svelte-13fqb27"><div class="svelte-13fqb27">This is the zero foreground section.
+				</div></section>
+			<section class="svelte-13fqb27"><div class="svelte-13fqb27">This is the first foreground section.
+				</div></section>
+			<section class="svelte-13fqb27"><div class="svelte-13fqb27">This is the second foreground section.
+				</div></section></div></svelte-scroller-foreground>
+</svelte-scroller-outer>
+<p class="svelte-1fy1q7l">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+  eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+  sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+</section>
+
+<section class="section svelte-kf75i3" id="svelte-scroller-update-d3"><section class="notes svelte-1ip1kk9"><div class="title-slot svelte-1ip1kk9"><h2 slot="title" class="svelte-knnyit">Svelte Scroller with D3 charts</h2>
+    <a href="https://github.com/reuters-graphics/example_svelte-graph-patterns/tree/main/src/lib/components/scrolly/SvelteScrollerUpdateD3"><img class="icon svelte-1ip1kk9" alt="link icon" src="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/noun-link-1320609-43f3e9e2.svg"></a>
+    <div slot="external-link" class="external-link"><a href="https://svelte.dev/repl/7821b1448a27485bb7ef7221d1f5cd99?version=3.48.0">Svelte repl</a></div></div>
+  <aside class="date">April 2022</aside>
+  <p class="summary">Svelte Scroller with a D3 graph where the graph updates happen from D3 based on index of steps. 
+</p>
+
+<h3>Outline of the problem</h3>
+<ul><li>In the Graph Svelte component, we pass props from the Scroller, 
+		namely index, progress and offset. Here we only use index, which 
+		tells us the index of the step we&#39;re currently on. 
+	</li>
+	<li>The <span class="accent">goal</span> is to use this index to pass as a prop to D3 
+		graph so that the graph will update based on the index, i.e. the step. 
+	</li>
+	<li>The problem is that if it&#39;s done the wrong way, 
+		the index will be passed in too many times/too often to the graph 
+		and it will get confused about when to update. 
+		This can interfere with update logic inside of D3, such as transitions. 
+		It can also impact performance.
+	</li>
+	<li>First note that any reference to any of the props width, height, index etc. 
+		passed in from the scroller needs to happen inside a reactive statement. 
+		You can test this with <code>console.log(index)</code>, which will produce <code>undefined</code>, 
+		as opposed to <code>$: console.log(index)</code>, which will console-log the index exactly once each time it updates.
+
+		By the same logic, any graph props that use any of these values need to be defined reactively. 
+		If you want to test this, 
+		add a <code>console.log(index)</code> in the Graph code logic, in <code>onMount</code> 
+		and in <code>afterUpdate</code>. You will see that <code>onMount</code> 
+		will return <code>undefined</code>, while <code>afterUpate</code> will return many many console logs, 
+		rather than only when the index value actually changes. 
+		Only the reactive statement, <code>$: console.log(index)</code>,
+		will log the index as expected - exactly once each time it changes, 
+		which in this case is each time the next or previous step enters the correct place in the viewport.
+		<br></li>
+	<li>Suppose you&#39;re updating the props correctly with a reactive declaration 
+		<br>
+		<code>$: props = ...</code> but then either only calling all your graph-creation, 
+		update and drawing logic from <code>onMount</code> or from <code>afterUpdate</code> or from both. 
+		This is no good because using <code>onMount</code> alone and then nothing else will give the graph no
+		chance to update its props, so it can&#39;t take in the index as a parameter and draw different things depending 
+		on the index. Using <code>afterUpdate</code> is also no good because that will keep firing every time anything 
+		updates and so it will overfire and pass in the index prop or other props to the graph way too often. This is exactly what we want to avoid. 
+		So, in conclusion, <code>onMount</code> will not allow for updates based on props, while <code>afterUpdate</code> 
+		will unintentionally create too many updates.
+	</li></ul>
+
+<h3>Summary of solution</h3>
+<ul><li>The takeaway is: <span class="accent">use reactive statements or declarations if referring to Scrolly variables to ensure enclosed logic updates correctly</span>.
+More specifically: 
+	</li>
+	<li>Define graph props (which depend on the Scrolly variables) reactively with
+		<br>
+		<code>$: props = ...</code></li>
+	<li>Set up the Graph from <code>onMount</code>, passing it the container, (initial) props and (initial) data.
+	</li>
+	<li>Write another reactive declaration that passes in the 
+		props to the graph and calls any functions that depend on these props which are relevant 
+		to the given step, e.g. <code>$: graph.props(props).draw()</code></li>
+	<li>Inside of that logic, use conditions based on the index to call different 
+		functions that will draw different things. 
+		These will now only be called once because the reactive declaration only updates once each time that index updates. 
+	</li></ul>
+
+<h3>Scroller Logic
+</h3>
+<ul><li>Each step has a height of 100vh (semi-transparent) but the actual content is less.
+	</li>
+	<li>The background container has height of 100vh (red lines) but the content can have less, 
+		in which case you can position it in the middle of the background container by 
+		making the background container have <code>display: flex</code>.
+	</li>
+	<li>The scrolly becomes sticky when the top of the background container hits the top of the viewport. 
+		This corresponds to <code>top=0</code>. It becomes unstuck when the bottom of the background container hits the top of the viewport. 
+		This corresponds to <code>bottom=1</code>.
+	</li>
+	<li>The scroller threshold is 0.5, meaning that for each step, it becomes active when 
+		50% of the step&#39;s total height is visible in the viewport. 
+		Be careful if you position the content of the steps anywhere other than the start of the step, because then the trigger point will be the same but will look visually different, as the position of the actual content for the step has shifted downwards.
+	</li>
+	<li>If you don&#39;t like having the 0th step at the top of the scroller container, 
+		the easiest thing to do would be to start with a step that has no content 
+		and adjust its height. 
+		Here we have step 0 with <code>height: 50vh</code>, which makes the start of step 1 align with the center of the viewport. 
+	</li></ul>
+
+<h3>Code highlights</h3>
+    <div class="codeblock svelte-knnyit"><div></div></div>
+</section>
+  <br>
+  
+
+<svelte-scroller-outer class="svelte-xdbafy"><svelte-scroller-background-container class="background-container svelte-xdbafy" style="
+		position: absolute;
+		top: 0;
+		transform: translate(0, 0px);
+		z-index: 1;
+	"><svelte-scroller-background class="svelte-xdbafy"><div slot="background" class="svelte-q1g28g"><section class="background-container graph svelte-q1g28g"><div class="graph-container svelte-1nwzs0n"></div></section></div></svelte-scroller-background></svelte-scroller-background-container>
+
+	<svelte-scroller-foreground class="svelte-xdbafy"><div slot="foreground" class="svelte-q1g28g"><section class="section-zero svelte-q1g28g"></section>
+    <section class="svelte-q1g28g"><div class="svelte-q1g28g">This is the first foreground section. Bars will grow to their final position.
+      </div></section>
+    <section class="svelte-q1g28g"><div class="svelte-q1g28g">This is the second foreground section. Bars will change colour. 
+      </div></section>
+    <section class="svelte-q1g28g"><div class="svelte-q1g28g">This is the third foreground section. Bars will go back to initial state.
+      </div></section></div></svelte-scroller-foreground>
+</svelte-scroller-outer>
+<p class="svelte-1fy1q7l">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+  eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+  sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+</section>
+
+<section class="section svelte-kf75i3" id="svelte-scroller-update-gsap"><section class="notes svelte-1ip1kk9"><div class="title-slot svelte-1ip1kk9"><h2 slot="title">Svelte Scroller with GSAP for transitions</h2>
+    <a href="https://github.com/reuters-graphics/example_svelte-graph-patterns/tree/main/src/lib/components/scrolly/SvelteScrollerUpdateGSAP"><img class="icon svelte-1ip1kk9" alt="link icon" src="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/noun-link-1320609-43f3e9e2.svg"></a>
+    <div slot="external-link" class="external-link"><a href="https://svelte.dev/repl/a837a1df3f2c4ee19cbd06651800cc2e?version=3.48.0">Svelte repl</a></div></div>
+  <aside class="date">April 2022</aside>
+  <p class="summary">Svelte Scroller with a D3 graph using GSAP to transition on ScrollTrigger-bsased steps.
+	Running vanilla JS logic, targetting DOM elements with query selectors, from inside of Svelte.
+</p>
+
+<h3>Main points</h3>
+<ul><li>In this approach, we don&#39;t make use of the <code>index</code> variable that can be 
+		passed in as a prop from Svelte Scroller or write any conditional on index 
+		code for the graph state inside of Svelte. 
+		Instead, we give each step&#39;s DOM element (here a div) a unique id and use this 
+		to <span class="accent">target the step entirely from the vanilla JS-based GSAP ScrollTrigger code</span>. 
+		The graph state for each step is still controlled from D3. 
+	</li>
+	<li><span class="accent">In the graph-drawing logic, we define all the different steps as separate functions</span>, 
+		e.g. <code>stepOneLogic()</code>, and then call all of them as callbacks to the <code>onToggle</code> 
+		method of the <code>ScrollTrigger</code> when the correct step is hit. 
+		We call all of them from the same method <code>gsapAnimate()</code>.
+		Note that each step becomes active and displays the graph state for that step 
+		when the top of the step hits the center of the viewport on scrolling down, but when the 
+		bottom of the step enters the viewport when scrolling back up. 
+	</li>
+	<li>In the Svelte code, we wrap the graph-drawing logic inside a <span class="accent">reactive declaration</span>,
+		which also checks that the DOM element into which we are injecting the graph exists. 
+		We could also have done that in an <code>onMount</code> (which has to check that the width and height variables exist).
+		However, then it wouldn&#39;t be responsive, as it only draws the graph once and doesn&#39;t update when the width and height 
+		update. The reactive declaration approach does that. 
+	</li></ul>
+
+<h3>Code highlights</h3>
+    <div class="codeblock svelte-1gslonn"><div></div></div>
+</section>
+  <br>
+  
+
+<svelte-scroller-outer class="svelte-xdbafy"><svelte-scroller-background-container class="background-container svelte-xdbafy" style="
+		position: absolute;
+		top: 0;
+		transform: translate(0, 0px);
+		z-index: 1;
+	"><svelte-scroller-background class="svelte-xdbafy"><div slot="background" class="svelte-1c6m587"><section class="background-container graph svelte-1c6m587"><div class="graph-container svelte-y5iczr"></div></section></div></svelte-scroller-background></svelte-scroller-background-container>
+
+	<svelte-scroller-foreground class="svelte-xdbafy"><div slot="foreground" class="svelte-1c6m587"><section class="section-zero svelte-1c6m587" id="step-0"></section>
+    <section class="svelte-1c6m587"><div id="step-1" class="svelte-1c6m587">This is the first foreground section. Bars will grow to their final position.
+      </div></section>
+    <section class="svelte-1c6m587"><div id="step-2" class="svelte-1c6m587">This is the second foreground section. Bars will change colour. 
+      </div></section>
+    <section class="svelte-1c6m587"><div id="step-3" class="svelte-1c6m587">This is the third foreground section. Bars will get random length.
+      </div></section></div></svelte-scroller-foreground>
+</svelte-scroller-outer>
+</section>
+
+
+		<script type="module" data-hydrate="1fvqnun">
+		import { start } from "https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/start-51c74f43.js";
+		start({
+			target: document.querySelector('[data-hydrate="1fvqnun"]').parentNode,
+			paths: {"base":"/example_svelte-graph-patterns","assets":"https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn"},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "always",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/layout.svelte-e60f4ff3.js"),
+						import("https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/pages/scrolly/index.svelte-8098ce12.js")
+				],
+				params: {},
+				routeId: "scrolly"
+			}
+		});
+	</script></div>
+	</body>
+</html>

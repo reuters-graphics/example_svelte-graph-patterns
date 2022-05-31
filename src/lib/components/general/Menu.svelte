@@ -1,5 +1,6 @@
 <script>
   import '$lib/styles/global.scss';
+  import { base } from '$app/paths';
 
   export let menuItems = []
 </script>

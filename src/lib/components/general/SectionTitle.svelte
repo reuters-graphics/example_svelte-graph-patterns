@@ -3,13 +3,14 @@
   export let icon
   import homeIcon from '$lib/assets/noun-global-1320596.svg'
   import Logo from '$lib/components/general/Logo.svelte';
+  import { base } from '$app/paths';
 </script>
 
 <Logo monocolourLogo={true}  backgroundColour='#ee3e3e' />
 <div class='section-title-container'>
   <slot name='title'><h1>Title</h1></slot>
   <img class='icon' alt="section icon" src={icon} />
-  <a class='home' href='/'>
+  <a class='home' href={base}>
     <span>home</span>
     <img class='home-icon' alt="home icon" src={homeIcon} />
   </a>

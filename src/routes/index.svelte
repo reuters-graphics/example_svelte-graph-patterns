@@ -6,6 +6,7 @@
   import scrollyIcon from '$lib/assets/noun-blackboard-1320572.svg';
   import observerIcon from '$lib/assets/noun-presentation-1320578.svg'
   import Logo from '$lib/components/general/Logo.svelte';
+  import { base } from '$app/paths';
   
 </script>
 
@@ -27,7 +28,7 @@
 
   <div class='menu-container'>
     <div class='menu-item'>
-      <a href='/graphs'>
+      <a href='{base}/graphs'>
         <div class='link-section'>
           <h3>Graphs</h3>
           <img class='menu-icon' alt="icon" src={graphIcon} />
@@ -40,7 +41,7 @@
       </a>
     </div>
     <div class='menu-item'>
-      <a href='/scrolly'>
+      <a href='{base}/scrolly'>
         <div class='link-section'>
           <h3>Scrolly</h3>
           <img class='menu-icon' alt="icon" src={scrollyIcon} />
@@ -53,7 +54,7 @@
       </a>
     </div>
     <div class='menu-item'>
-      <a href='/observer'>
+      <a href='{base}/observer'>
         <div class='link-section'>
           <h3>Intersection Observer</h3>
           <img class='menu-icon' alt="icon" src={observerIcon} />

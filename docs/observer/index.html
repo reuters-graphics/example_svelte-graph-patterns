@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-security-policy" content="">
+	<link rel="stylesheet" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/pages/observer/index.svelte-aa1e30f9.css">
+	<link rel="stylesheet" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/codeblocks-c4701768.css">
+	<link rel="stylesheet" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/appendSelect-b7ef42ae.css">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/start-51c74f43.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/index-3b89fb51.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/index-26d188c2.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/paths-396f020f.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/layout.svelte-e60f4ff3.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/pages/observer/index.svelte-3ed75b48.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/codeblocks-00307bc8.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/appendSelect-1aa13c28.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/index-e312e58d.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/noun-presentation-1320578-0041c878.js">
+	</head>
+	<body>
+		<div>
+
+
+<nav class="nav svelte-1noyurf" style="background: #ee3e3e;"><div class="logo-container svelte-1noyurf"><a href="https://github.com/reuters-graphics" class="svelte-1noyurf"><figure class="navbar-brand svelte-1noyurf"><img class="logo reuters-graphics svelte-1noyurf" src="https://graphics.thomsonreuters.com/style-assets/images/logos/reuters-graphics-logo/svg/graphics-logo-light.svg" alt="Reuters graphics logo"></figure></a></div>
+	
+</nav>
+<div class="section-title-container svelte-1ja2cff"><h1 slot="title">Intersection Observer</h1>
+  <img class="icon" alt="section icon" src="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/noun-presentation-1320578-8c5ff00d.svg">
+  <a class="home" href="/example_svelte-graph-patterns"><span>home</span>
+    <img class="home-icon" alt="home icon" src="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/noun-global-1320596-31e1433f.svg"></a>
+</div>
+
+<div class="link-menu svelte-1bakbq1"><a href="#svelte-intersection-observer-lazy-loading" sveltekit:noscroll class="svelte-1bakbq1">Svelte Intersection Observer + lazy loading
+    </a><a href="#vanilla-intersection-observer" sveltekit:noscroll class="svelte-1bakbq1">Vanilla Intersection Observer
+    </a>
+</div>
+
+<section class="section svelte-kf75i3" id="svelte-intersection-observer-lazy-loading"><section class="notes svelte-1ip1kk9"><div class="title-slot svelte-1ip1kk9"><h2 slot="title" class="svelte-knnyit">Svelte Intersection Observer lazy loading</h2>
+    <a href="https://github.com/reuters-graphics/example_svelte-graph-patterns/tree/main/src/lib/components/observer/SvelteIntersectionObserverLazyLoading"><img class="icon svelte-1ip1kk9" alt="link icon" src="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/noun-link-1320609-43f3e9e2.svg"></a>
+    <div slot="external-link" class="external-link"><a href="https://svelte.dev/repl/310510e6e6c3464f9518c55b6ad50f25?version=3.48.0">Svelte repl</a></div></div>
+  <aside class="date">April 2022</aside>
+  <p class="summary svelte-19j31zf">Using IntersectionObserver via the 
+	<a href="https://github.com/metonym/svelte-intersection-observer" target="_blank" class="svelte-19j31zf">svlete-intersection-observer library</a>
+	to lazy-load content once <strong>and</strong> trigger changes to a content block when it comes into view 
+	(intersects), while also passing interesting element as prop to a sticky element on the page 
+	via a Svelte store.
+</p>
+
+<h3 class="svelte-19j31zf">Main points</h3>
+<ul class="svelte-19j31zf"><li><span class="accent">Use two separate intersection observers</span></li>
+	<li>We need two intersection observers if we want to do lazy loading and change 
+		the element somehow after is has been lazy loaded. 
+		If the elements don&#39;t need to lazy-load or if they don&#39;t need to 
+		change in any way after they have first loaded, then we only need one 
+		IntersectionObserver.
+	</li>
+	<li><span class="accent">The first (outer) intersection observer is for lazy loading. </span>
+		It observers each element and if the element enters the viewport (<code>threshold=&quot;0&quot;</code>), 
+		we load the element. This happens only once (<code>once=&quot;true&quot;</code>), 
+		which makes sense because we don&#39;t need to lazy-load more than once. 
+		The lazy loading bit is achieved by adding the condition <code>if intersecting</code>  
+		as then we will only display the DOM element if it intersects the viewport. 
+	</li>
+	<li>In this particular example there is no need to use lazy loading actually, but if we were 
+		loading really heavy chunks of content, e.g. HTML5 canvas elements with thousands of 
+		shapes drawn in each of them, it would help performance to lazy-load each canvas as it comes into view,
+		rather than trying to load all of them at once on page load/component mount. 
+	</li>
+	<li><span class="accent">The second (inner) intersection observer is there to affect a change 
+		to the already lazy-loaded element based on some different intersecting condition.</span>
+		In this case, if the element becomes 70% visible (<code>threshold=&quot;0.7&quot;</code>), 
+		it will change colour. 
+		<br>
+		(See <code>.style(&#39;background&#39;, d =&gt; intersecting ? &#39;#ee3e3e&#39; : &#39;#6b6065&#39;)</code> in ContentElement.)
+		<br>
+		Sidenote: The <code>threshold</code> prop of the IntersectionObserver here is 
+		not the viewport threshold, but the proportion (0 to 1) of the intersecting element that 
+		has to be visible in the viewport to trigger the intersecting prop to become true.
+	</li>
+	<li><span class="accent">To update the content of the sticky element:</span>
+		<ul class="svelte-19j31zf"><li>- Initialise a <code>currentElNum</code> variable as a svelte store.</li>
+			<li>- Set the value of <code>currentElNum</code> to the id corresponding 
+				to the data entry bound to that element each time the second IntersectionObserver&#39;s 
+				intersection condition is satisfied. 
+				In other words, when an element is 70% visible in the viewport, 
+				<code>currentElNum</code> gets updated with the id for the data entry bound to that element.
+			</li>
+			<li>- Then the StickyElement imports <code>currentElNum</code> and its content gets dynamically updated based on it.
+			</li></ul></li>
+	<li>Beware that this is buggy if the height of the intersecting elements is small enough that multiple of them fit into the viewport.
+	</li></ul>
+
+<h3 class="svelte-19j31zf">Code highlights</h3>
+    <div class="codeblock svelte-knnyit"><div></div></div>
+</section>
+  <br>
+  <section><div id="sticky-element" class="svelte-1t17e91">I am a sticky element and I update based on the intersecting element, which is:
+	<h3 class="svelte-1t17e91">-1</h3>
+</div>
+  <div><div class="placeholder svelte-1wdlev2">loading...</div></div>
+    <div><div class="placeholder svelte-1wdlev2">loading...</div></div>
+    <div><div class="placeholder svelte-1wdlev2">loading...</div></div>
+    <div><div class="placeholder svelte-1wdlev2">loading...</div></div>
+    <div><div class="placeholder svelte-1wdlev2">loading...</div></div>
+    
+</section>
+</section>
+
+<section class="section svelte-kf75i3" id="vanilla-intersection-observer"><section class="notes svelte-1ip1kk9"><div class="title-slot svelte-1ip1kk9"><h2 slot="title" class="svelte-knnyit">Vanilla Intersection Observer</h2>
+    <a href="https://github.com/reuters-graphics/example_svelte-graph-patterns/tree/main/src/lib/components/observer/VanillaIntersectionObserver"><img class="icon svelte-1ip1kk9" alt="link icon" src="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/noun-link-1320609-43f3e9e2.svg"></a>
+    <div slot="external-link" class="external-link"><a href="https://svelte.dev/repl/d9bc0f84d467495991518091456fa01f?version=3.48.0">Svelte repl</a></div></div>
+  <aside class="date">April 2022</aside>
+  <p class="summary svelte-19j31zf">Using just the built-in 
+	<a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API" target="_blank" class="svelte-19j31zf">Intersection Observer API</a>, 
+	affecting a change in the DOM when an element intersects the viewport.
+</p>
+
+<h3 class="svelte-19j31zf">Main points</h3>
+<ul class="svelte-19j31zf"><li>The built-in <code>IntersectionObserver</code> class takes in two 
+		parameters, an <code>observerCallback</code> and <code>observerOptions</code>.
+	</li>
+	<li><span class="accent"><code>observerOptions</code></span>
+		are things like the threshold at which an element is 
+		considered intersecting (as a proportion of the total height of the element). 
+		These are static properties.
+	</li>
+	<li><span class="accent"><code>observerCallback</code></span>
+		 determines what happens when the intersection event occurs. 
+		In our case, we define a <code>inView</code> variable, which keeps track if the element is in view
+		and update it from that callback function. 
+		<br>
+		*Note that if we then wanted to run any logic that depends on <code>inView</code>, it would need to 
+		be wrapped in a reactive declaration. For example, if we then wanted to draw a D3 graph, we&#39;d need to 
+		make the cade reactive, just like in other examples here. 
+	</li>
+	<li>Then we <span class="accent">instantiate the IntersectionObserver and start observing the desired element from onMount</span>. 
+		This is to make sure that the element we are observing has been mounted. 
+	</li>
+	<li>Finally, we use a class of <code>active</code> on the observed element, where <code>active</code>
+		is defined in CSS and determines how the appearance of the changes when <code>inView = true</code>.
+		<br>
+		*Note that the note above about <code>inView</code> only being able to affect a change if it is 
+		wrapped in a reactive statement doesn&#39;t apply in this case. This is because Svlete-native DOM changes 
+		(e.g. DOM-events from Svelte like <code>on:click</code> or class conditions like <code>class:active</code> etc.) 
+		are reactive by design. 
+	</li></ul>
+
+<h3 class="svelte-19j31zf">Code highlights</h3>
+    <div class="codeblock svelte-knnyit"><div></div></div>
+</section>
+  <br>
+  <section class="svelte-1ous08w"><h3 class="svelte-1ous08w">When 50% of the element below are into the viewport, it will change colour.
+    Scroll up and down the page to see. 
+  </h3>
+  <div id="observed-element" class="content-to-scroll-over svelte-1ous08w"></div>
+</section>
+</section>
+
+
+		<script type="module" data-hydrate="uvgarr">
+		import { start } from "https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/start-51c74f43.js";
+		start({
+			target: document.querySelector('[data-hydrate="uvgarr"]').parentNode,
+			paths: {"base":"/example_svelte-graph-patterns","assets":"https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn"},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "always",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/layout.svelte-e60f4ff3.js"),
+						import("https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/pages/observer/index.svelte-3ed75b48.js")
+				],
+				params: {},
+				routeId: "observer"
+			}
+		});
+	</script></div>
+	</body>
+</html>
