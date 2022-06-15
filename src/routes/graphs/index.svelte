@@ -49,7 +49,7 @@
   sectionTitle='Svlete with D3 and Svelte Transitions'
   externalLink=''
   externalLinkTitle='' 
-  internalLink=''
+  internalLink='https://github.com/reuters-graphics/example_svelte-graph-patterns/tree/main/src/lib/components/graphs/SvelteGraphWithTransitions'
   date='June 2022'
 />
 
