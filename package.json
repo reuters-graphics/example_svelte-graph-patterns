@@ -30,7 +30,6 @@
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "mdsvexamples": "^0.3.0",
-    "node-sass": "^7.0.1",
     "prismjs": "^1.28.0",
     "sass": "^1.51.0",
     "svelte-intersection-observer": "^0.10.0",
