@@ -7,10 +7,12 @@
   import observerIcon from '$lib/assets/noun-presentation-1320578.svg'
   import Logo from '$lib/components/general/Logo.svelte';
   import { base } from '$app/paths';
+  import SEO from '$lib/components/general/SEO.svelte';
   
 </script>
 
 
+<SEO />
 
 
 <Logo monocolourLogo={true}  backgroundColour='#ee3e3e' />
