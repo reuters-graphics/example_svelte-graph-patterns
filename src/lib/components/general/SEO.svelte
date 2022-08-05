@@ -6,7 +6,6 @@
     export let shareDescription = 'Collection of patterns for using Svelte for graphs, scrollytelling and other useful things.'
     export let shareImgPath = graphIcon
     export let lang = 'en';
-    export let hostname = 'graphics.reuters.com';
     export let url = 'https://reuters-graphics.github.io/example_svelte-graph-patterns/'
 </script>
 
@@ -15,29 +14,6 @@
   <title>{seoTitle}</title>
   <meta name="description" content="{seoDescription}" />
 
-  <link
-    rel="shortcut icon"
-    type="image/x-icon"
-    href="https://s3.reutersmedia.net/resources_v2/images/favicon/favicon.ico"
-  />
-    <link
-    rel="icon"
-    type="image/png"
-    href="https://s3.reutersmedia.net/resources_v2/images/favicon/favicon-16x16.png"
-    sizes="16x16"
-  />
-    <link
-    rel="icon"
-    type="image/png"
-    href="https://s1.reutersmedia.net/resources_v2/images/favicon/favicon-32x32.png"
-    sizes="32x32"
-  />
-    <link
-    rel="icon"
-    type="image/png"
-    href="https://s3.reutersmedia.net/resources_v2/images/favicon/favicon-96x96.png"
-    sizes="96x96"
-  />
 
   <meta property="og:url" content="{url}" />
   <meta property="og:type" content="article" />

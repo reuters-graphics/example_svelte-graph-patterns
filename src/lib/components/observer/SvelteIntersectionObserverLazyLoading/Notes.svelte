@@ -2,7 +2,7 @@
 	Using IntersectionObserver via the 
 	<a href='https://github.com/metonym/svelte-intersection-observer' target='_blank'>svlete-intersection-observer library</a>
 	to lazy-load content once <strong>and</strong> trigger changes to a content block when it comes into view 
-	(intersects), while also passing interesting element as prop to a sticky element on the page 
+	(intersects), while also passing intersecting element as prop to a sticky element on the page 
 	via a Svelte store.
 </p>
 

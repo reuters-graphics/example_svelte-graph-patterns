@@ -7,12 +7,12 @@
 	<link rel="stylesheet" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/pages/observer/index.svelte-aa1e30f9.css">
 	<link rel="stylesheet" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/codeblocks-c4701768.css">
 	<link rel="stylesheet" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/appendSelect-b7ef42ae.css">
-	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/start-d2b5c668.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/start-96030fc5.js">
 	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/index-c1ea72d5.js">
 	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/index-613b4b1e.js">
 	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/paths-396f020f.js">
 	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/layout.svelte-bd8d5911.js">
-	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/pages/observer/index.svelte-7c86509a.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/pages/observer/index.svelte-7dadda63.js">
 	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/codeblocks-e4ede99b.js">
 	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/appendSelect-664fcfb9.js">
 	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/index-0efaa515.js">
@@ -43,7 +43,7 @@
   <p class="summary svelte-19j31zf">Using IntersectionObserver via the 
 	<a href="https://github.com/metonym/svelte-intersection-observer" target="_blank" class="svelte-19j31zf">svlete-intersection-observer library</a>
 	to lazy-load content once <strong>and</strong> trigger changes to a content block when it comes into view 
-	(intersects), while also passing interesting element as prop to a sticky element on the page 
+	(intersects), while also passing intersecting element as prop to a sticky element on the page 
 	via a Svelte store.
 </p>
 
@@ -132,7 +132,7 @@
 		<br>
 		*Note that if we then wanted to run any logic that depends on <code>inView</code>, it would need to 
 		be wrapped in a reactive declaration. For example, if we then wanted to draw a D3 graph, we&#39;d need to 
-		make the cade reactive, just like in other examples here. 
+		make the code reactive, just like in other examples here. 
 	</li>
 	<li>Then we <span class="accent">instantiate the IntersectionObserver and start observing the desired element from onMount</span>. 
 		This is to make sure that the element we are observing has been mounted. 
@@ -141,7 +141,7 @@
 		is defined in CSS and determines how the appearance of the changes when <code>inView = true</code>.
 		<br>
 		*Note that the note above about <code>inView</code> only being able to affect a change if it is 
-		wrapped in a reactive statement doesn&#39;t apply in this case. This is because Svlete-native DOM changes 
+		wrapped in a reactive statement doesn&#39;t apply in this case. This is because Svelte-native DOM changes 
 		(e.g. DOM-events from Svelte like <code>on:click</code> or class conditions like <code>class:active</code> etc.) 
 		are reactive by design. 
 	</li></ul>
@@ -150,7 +150,7 @@
     <div class="codeblock svelte-knnyit"><div></div></div>
 </section>
   <br>
-  <section class="svelte-1ous08w"><h3 class="svelte-1ous08w">When 50% of the element below are into the viewport, it will change colour.
+  <section class="svelte-1ous08w"><h3 class="svelte-1ous08w">When 50% of the element below is into the viewport, it will change colour.
     Scroll up and down the page to see. 
   </h3>
   <div id="observed-element" class="content-to-scroll-over svelte-1ous08w"></div>
@@ -158,10 +158,10 @@
 </section>
 
 
-		<script type="module" data-hydrate="uvgarr">
-		import { start } from "https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/start-d2b5c668.js";
+		<script type="module" data-hydrate="e2zw5i">
+		import { start } from "https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/start-96030fc5.js";
 		start({
-			target: document.querySelector('[data-hydrate="uvgarr"]').parentNode,
+			target: document.querySelector('[data-hydrate="e2zw5i"]').parentNode,
 			paths: {"base":"/example_svelte-graph-patterns","assets":"https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn"},
 			session: {},
 			route: true,
@@ -172,7 +172,7 @@
 				error: null,
 				nodes: [
 					import("https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/layout.svelte-bd8d5911.js"),
-						import("https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/pages/observer/index.svelte-7c86509a.js")
+						import("https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/pages/observer/index.svelte-7dadda63.js")
 				],
 				params: {},
 				routeId: "observer"

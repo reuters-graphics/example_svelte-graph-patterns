@@ -32,7 +32,7 @@
 
 <section>
   <h3>
-    When 50% of the element below are into the viewport, it will change colour.
+    When 50% of the element below is into the viewport, it will change colour.
     Scroll up and down the page to see. 
   </h3>
   <div id='observed-element' class='content-to-scroll-over' class:active={inView}></div>

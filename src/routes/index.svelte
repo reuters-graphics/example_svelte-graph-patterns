@@ -41,7 +41,7 @@
           <li>D3 in Svelte, the D3 way - Pattern 1</li>
           <li>D3 in Svelte, the D3 way - Pattern 2</li>
           <li>D3 in Svelte, the Svelte way - Pattern 1</li>
-          <li>Svlete with D3 and Svelte Transitions</li>
+          <li>Svelte with D3 and Svelte Transitions</li>
         </ul>
       </a>
     </div>

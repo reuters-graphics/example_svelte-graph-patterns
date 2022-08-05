@@ -1,5 +1,5 @@
 <p class='summary'>
-	Svelte Scroller with a D3 graph using GSAP to transition on ScrollTrigger-bsased steps.
+	Svelte Scroller with a D3 graph using GSAP to transition on ScrollTrigger-based steps.
 	Running vanilla JS logic, targetting DOM elements with query selectors, from inside of Svelte.
 </p>
 

@@ -7,7 +7,7 @@
 <ul>
 	<li>
 		Width and height of the graph are based on the width and height of the container, which we obtain with 
-    Svelte binding, e.g. <code>bind:clientWidth=w</code>. These are also used to based other values on, such as 
+    Svelte binding, e.g. <code>bind:clientWidth=w</code>. These are also used to base other values on, such as 
     fill, and make them responsive.
 	</li>
 	<li>
