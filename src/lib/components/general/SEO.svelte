@@ -1,5 +1,5 @@
 <script>
-    import graphIcon from '$lib/assets/noun-monitoring-1320561.svg';
+    import graphIcon from '$lib/assets/sharecard.png';
     export let seoTitle = 'Svelte Patterns'
     export let seoDescription = 'Collection of patterns for using Svelte for graphs, scrollytelling and other useful things.'
     export let shareTitle = 'Svelte Patterns'
