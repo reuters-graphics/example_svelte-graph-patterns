@@ -75,8 +75,7 @@
   <div class='footer'>
     <p>Icons by Saeful Muslim from NounProject.com</p>
     <p>
-      *Not intended as best pratices. Simply solutions found through trial and error ✨
-    !</p>
+      *These are not intended as best practices, but simply as working solutions found through trial and error ✨!</p>
   </div>
 </section>
 

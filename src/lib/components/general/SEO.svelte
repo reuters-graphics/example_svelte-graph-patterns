@@ -1,9 +1,10 @@
 <script>
+    import graphIcon from '$lib/assets/noun-monitoring-1320561.svg';
     export let seoTitle = 'Svelte Patterns'
     export let seoDescription = 'Collection of patterns for using Svelte for graphs, scrollytelling and other useful things.'
     export let shareTitle = 'Svelte Patterns'
     export let shareDescription = 'Collection of patterns for using Svelte for graphs, scrollytelling and other useful things.'
-    export let shareImgPath;
+    export let shareImgPath = graphIcon
     export let lang = 'en';
     export let hostname = 'graphics.reuters.com';
     export let url = 'https://reuters-graphics.github.io/example_svelte-graph-patterns/'
