@@ -24,7 +24,7 @@
   <NotesBox {internalLink} {date}>
     <h2 slot='title'>{sectionTitle}</h2>
     <div slot='external-link' class='external-link'>
-      <a href={externalLink}>{externalLinkTitle}</a>
+      <!-- <a href={externalLink}>{externalLinkTitle}</a> -->
     </div>
     <Notes />
     <div class='codeblock'>
