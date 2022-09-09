@@ -68,7 +68,7 @@
 	}
 	p {
 		font-size: 1.15rem;
-    	letter-spacing: 0.05rem;
-    	color: $mid-color; 
+    letter-spacing: 0.05rem;
+    color: $mid-color; 
 	}
 </style>
