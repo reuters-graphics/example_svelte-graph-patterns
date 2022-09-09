@@ -11,7 +11,10 @@
     the graph to variables which are then passed as props to the graph, we use don't pass any width and height related props, 
     but instead get them from inside the graph-drawing logic with 
     <br>
-    <code>const width = container.getBoundingClientRect().width </code>
+    <code>const width = container
+        .getBoundingClientRect()
+        .width 
+    </code>
 	</li>
 	<li>
 		Thus, instead of having reactive props, the props passed to the graph only contain constants. 
@@ -35,9 +38,9 @@
 	</li>
 	<li>
 		We need to write an extra event listener for resize and some not very Svelt-y code inside 
-    the graph logic such as:
+    the graph logic, e.g. getting width of the container with
     <br>
-    <code>const width = container.getBoundingClientRect().width</code>, when we 
+    <code>getBoundingClientRect()</code>, when we 
     could instead just bind the container's dimensions to variables which are then passed as props to the graph, 
     making it both cleaner and eliminating the need to use a resize event. 
 	</li>
