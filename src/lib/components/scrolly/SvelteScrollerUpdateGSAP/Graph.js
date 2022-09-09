@@ -27,62 +27,61 @@ class Graph {
 
   defaultData = [];
   defaultProps = {}
-	
 
   // Define what the graph is supposed to look like initially
   setGraph() {
     const data = this.data();
     const { width, height, fillBright } = this.props();
 		
-	// Dimentions - make sure you export anything needed later with a this.
-	this.margin = { top: 20, right: 10, bottom: 10, left: 10 }
-	this.boundedWidth = width - this.margin.left - this.margin.right
-	this.boundedHeight = height - this.margin.top - this.margin.bottom
-		
-	// Scales 
-	this.xScale = d3.scaleLinear()
-		.domain([0, d3.max(data, d => d.number)])
-		.range([0, this.boundedWidth])
-		
-	this.yScale = d3.scaleBand()
-		.domain(data.map(d => d.id))
-		.range([0, this.boundedHeight])
-		.paddingInner(0.3)
+		// Dimentions - make sure you export anything needed later with a this.
+		this.margin = { top: 20, right: 10, bottom: 10, left: 10 }
+		this.boundedWidth = width - this.margin.left - this.margin.right
+		this.boundedHeight = height - this.margin.top - this.margin.bottom
+			
+		// Scales 
+		this.xScale = d3.scaleLinear()
+			.domain([0, d3.max(data, d => d.number)])
+			.range([0, this.boundedWidth])
+			
+		this.yScale = d3.scaleBand()
+			.domain(data.map(d => d.id))
+			.range([0, this.boundedHeight])
+			.paddingInner(0.3)
 				
-	// Container 
-	this.svg = this.selection()
-      .appendSelect('svg')
-      .attr('width', width)
-      .attr('height', height)
-      .classed('svg', true)
-	this.plot = this.svg
-      .appendSelect('g.plot')
-		.attr('transform', `translate(${this.margin.left}, ${this.margin.top})`)
+		// Container 
+		this.svg = this.selection()
+				.appendSelect('svg')
+				.attr('width', width)
+				.attr('height', height)
+				.classed('svg', true)
+		this.plot = this.svg
+				.appendSelect('g.plot')
+			.attr('transform', `translate(${this.margin.left}, ${this.margin.top})`)
 		
-	// Inital plot - this will get drawn on step 0 
-	this.plotInitial = this.plot.selectAll('.bar')
-		.data(data, d => d.id)
-		.join(
-			enter => {
-				return enter.append('rect')
-					.attr('width', 10)
-			},
-			update => {
-				return update
-					.interrupt()
-					.transition().duration(300)
+		// Inital plot - this will get drawn on step 0 
+		this.plotInitial = this.plot.selectAll('.bar')
+			.data(data, d => d.id)
+			.join(
+				enter => {
+					return enter.append('rect')
 						.attr('width', 10)
-			},
-			exit => exit
-			)
-			.classed('bar', true)
-			.attr('x', 0)
-			.attr('y', d => this.yScale(d.id))
-			.attr('height', this.yScale.bandwidth())
-			.style('fill', fillBright)
-		
-		return this;
-	}
+				},
+				update => {
+					return update
+						.interrupt()
+						.transition().duration(300)
+							.attr('width', 10)
+				},
+				exit => exit
+				)
+				.classed('bar', true)
+				.attr('x', 0)
+				.attr('y', d => this.yScale(d.id))
+				.attr('height', this.yScale.bandwidth())
+				.style('fill', fillBright)
+			
+			return this;
+		}
 	
 	// GSAP all goes here - one ScrollTrigger for each step
 	gsapAnimate() {
@@ -103,7 +102,7 @@ class Graph {
 			onToggle: ( {isActive} ) => { 
 				if (isActive) {
 					this.stepOneLogic() 
-				  } 
+				} 
 			},
 			// onEnter: ( {progress} ) => { this.stepOneLogic()  },
 			// onEnterBack: ({ isActive, progress }) => {  this.stepOneLogic()  },

@@ -11,14 +11,14 @@
 	const graph = new Graph()
 	let graphContainer
 
-    // Option 1: Graph code from a reactive statement
-    // Need to use this option if we have reactively-defined props, which is do in this case 
-    // (with and height, passed down from the parent Scrolly component)
+  // Option 1: Graph code from a reactive statement
+  // Need to use this option if we have reactively-defined props, which is do in this case 
+  // (with and height, passed down from the parent Scrolly component)
 	$: props = {
 		width: width,
 		height: height,
-        fillDark: '#3d405b',
-        fillBright: '#fff'
+    fillDark: '#3d405b',
+    fillBright: '#fff'
 	}
 	// Since the props are reactive, the graph update logic - which depends on props - 
 	// should also happen from a reactive statement. *not* from afterUpdate which will over-fire
@@ -34,10 +34,10 @@
 			// Then update the graph only using GSAP
 		}		
 
-    // Option 2: Graph code from an onMount + resize event for responsiveness 
-    // With this option we can't use reactive props like the width and heihgt so these 
-    // need to be constants, and we need to define a resize event to listen for width/height changes 
-    // Don't use afterUpdate for that - it will over-fire! 
+  // Option 2: Graph code from an onMount + resize event for responsiveness 
+  // With this option we can't use reactive props like the width and heihgt so these 
+  // need to be constants, and we need to define a resize event to listen for width/height changes 
+  // Don't use afterUpdate for that - it will over-fire! 
 	// onMount(() => {
 	// 	if (width && height) {
 	// 		graph

@@ -9,7 +9,8 @@
 	let count // int total num steps (=DOM elements) of the foreground
 	
 	// The vertical position that the top of the foreground must scroll past before the background becomes fixed, as a proportion of window height
-	// think of it as the position in the viewport that the background 'starts' at i.e. the top of the background is at that position while the foreground is scrolling on top of it; best to keep it at 0 so it starts from the top and give the [slot="background"] a height: 100vh
+	// think of it as the position in the viewport that the background 'starts' at i.e. the top of the background is at that position while the foreground is scrolling on top of it; 
+	// best to keep it at 0 so it starts from the top and give the [slot="background"] a height: 100vh
 	let top = 0;
 	// Once the bottom of the foreground passes this point, the background becomes unfixed
 	// Best to just keep it at 1 to avoid the background becoming unfixed and scrolling over other elements down the page unintentionally

@@ -14,7 +14,7 @@
 	
 	// So that we can pass the width and height of the container to the graph
 	let w;
-  	let h;
+  let h;
 
 </script>
 

@@ -51,7 +51,6 @@ class Graph {
 			.attr('width', width)
 			.attr('height', height)
 			.classed('svg', true)
-			//.style('background-color', 'pink')
 
 		this.plot = this.svg
 			.appendSelect('g.plot')

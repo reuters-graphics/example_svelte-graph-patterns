@@ -95,7 +95,7 @@
 		justify-content: center;
 	}
 
-  	/* Hack - make the 0th step have no content and height of 50vh - 
+  /* Hack - make the 0th step have no content and height of 50vh - 
 	then it looks like we start the scrolly from 1st step in the middle of the screen */
 	section.section-zero {
 		height: 10vh;

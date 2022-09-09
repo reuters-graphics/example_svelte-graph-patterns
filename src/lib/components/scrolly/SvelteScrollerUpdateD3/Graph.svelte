@@ -58,7 +58,7 @@
 <div class='graph-container' bind:this="{graphContainer}"></div>
 
 <style lang='scss'>
-  @import '../../../styles/global.scss'; // make sure to import from the right place
+  @import '../../../styles/global.scss'; 
   div.graph-container {
 		padding: 0;
 		margin: 0;
