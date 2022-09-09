@@ -7,12 +7,12 @@
 	<link rel="stylesheet" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/pages/graphs/index.svelte-7cce3953.css">
 	<link rel="stylesheet" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/codeblocks-c4701768.css">
 	<link rel="stylesheet" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/assets/appendSelect-bd424882.css">
-	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/start-a313913f.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/start-9dc4f204.js">
 	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/index-c1ea72d5.js">
 	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/index-613b4b1e.js">
 	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/paths-396f020f.js">
 	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/layout.svelte-bd8d5911.js">
-	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/pages/graphs/index.svelte-6532f637.js">
+	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/pages/graphs/index.svelte-c058c820.js">
 	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/codeblocks-e4ede99b.js">
 	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/appendSelect-273f0606.js">
 	<link rel="modulepreload" href="https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/chunks/lodash.default-06a7c2fb.js">
@@ -96,7 +96,10 @@
     the graph to variables which are then passed as props to the graph, we use don&#39;t pass any width and height related props, 
     but instead get them from inside the graph-drawing logic with 
     <br>
-    <code>const width = container.getBoundingClientRect().width </code></li>
+    <code>const width = container
+        .getBoundingClientRect()
+        .width 
+    </code></li>
 	<li>Thus, instead of having reactive props, the props passed to the graph only contain constants. 
 	</li>
 	<li>The <span class="accent">graph is initialised from <code>onMount</code></span>, and because the responsive
@@ -113,9 +116,9 @@
       The reason for that is that the <code>afterUpdate</code> logic might fire more often that intended. 
 	</li>
 	<li>We need to write an extra event listener for resize and some not very Svelt-y code inside 
-    the graph logic such as:
+    the graph logic, e.g. getting width of the container with
     <br>
-    <code>const width = container.getBoundingClientRect().width</code>, when we 
+    <code>getBoundingClientRect()</code>, when we 
     could instead just bind the container&#39;s dimensions to variables which are then passed as props to the graph, 
     making it both cleaner and eliminating the need to use a resize event. 
 	</li></ul>
@@ -193,10 +196,10 @@
 </section>
 
 
-		<script type="module" data-hydrate="1gj4zpr">
-		import { start } from "https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/start-a313913f.js";
+		<script type="module" data-hydrate="f5g8g0">
+		import { start } from "https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/start-9dc4f204.js";
 		start({
-			target: document.querySelector('[data-hydrate="1gj4zpr"]').parentNode,
+			target: document.querySelector('[data-hydrate="f5g8g0"]').parentNode,
 			paths: {"base":"/example_svelte-graph-patterns","assets":"https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn"},
 			session: {},
 			route: true,
@@ -207,7 +210,7 @@
 				error: null,
 				nodes: [
 					import("https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/layout.svelte-bd8d5911.js"),
-						import("https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/pages/graphs/index.svelte-6532f637.js")
+						import("https://reuters-graphics.github.io/example_svelte-graph-patterns/cdn/_app/pages/graphs/index.svelte-c058c820.js")
 				],
 				params: {},
 				routeId: "graphs"
