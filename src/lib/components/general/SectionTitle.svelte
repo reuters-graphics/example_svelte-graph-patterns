@@ -10,7 +10,7 @@
 <div class='section-title-container'>
   <slot name='title'><h1>Title</h1></slot>
   <img class='icon' alt="section icon" src={icon} />
-  <a class='home' href={base}>
+  <a class='home' href='/'>
     <span>home</span>
     <img class='home-icon' alt="home icon" src={homeIcon} />
   </a>
@@ -63,13 +63,13 @@
       position: absolute;
       top: 0px;
       right: 50px;
+      z-index: 99;
     }
 
     & :global(a.home span) {
       position: absolute;
       top: 18px;
       right: -10px;
-      // left: 50px;
     }
 
     & :global(img.home-icon) {

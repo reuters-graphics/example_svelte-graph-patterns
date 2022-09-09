@@ -29,15 +29,9 @@
     itemprop="image"
   />
 
-
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{shareTitle}" />
   <meta name="twitter:description" content="{shareDescription}" />
   <meta name="twitter:image:src" content="{shareImgPath}" />
 
-
-  <meta property="fb:app_id" content="319194411438328" />
-  <meta property="fb:admins" content="616167736" />
-  <meta property="fb:admins" content="625796953" />
-  <meta property="fb:admins" content="571759798" />
 </svelte:head>

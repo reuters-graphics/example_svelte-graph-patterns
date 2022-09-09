@@ -5,7 +5,7 @@
 	d3.selection.prototype.appendSelect = appendSelect;
 	import { initialData, changedData } from './data';
 	import { fly, fade, slide, crossfade} from 'svelte/transition';
-	import { elasticOut, cubicOut, quintOut } from 'svelte/easing';
+	import { cubicOut } from 'svelte/easing';
 	
 	let data = initialData
 	let enter = false
@@ -33,7 +33,7 @@
 		.domain(d3.extent(data, d => d.value))
 		.range([20, 50])
 
-	// Custom transition - not used here
+	// Custom transition - not used here but left as an example
 	const customTransition = (node, { delay, duration }) => {
 		const o = +getComputedStyle(node).opacity;
 		const existingTransform = getComputedStyle(node).transform.replace('none', '');

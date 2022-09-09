@@ -25,7 +25,7 @@ class Chart {
   defaultData = [];
   defaultProps = {}
 	
-	// This is also supposed to be responsive
+	// This is also responsive
 	draw() {
     const data = this.data();
     let { margin, fill } = this.props();
@@ -52,7 +52,6 @@ class Chart {
       .attr('width', width)
       .attr('height', height)
       .classed('svg', true)
-			//.style('background-color', 'pink')
 		const plot = svg
       .appendSelect('g.plot')
 			.attr('transform', `translate(${margin.left}, ${margin.top})`)

@@ -31,14 +31,13 @@
       we would <span class='accent'>need to put the graph-drawing logic in an <code>afterUpdate</code> as well</span>. 
       This might be ok if the changing variables only change very rarely, but not ok when they update continously, 
       as is the case for example with a scroller. 
-      The reason for that is that the <code>afterUpdate</code> logic will fire more often that needed. 
-      When all the graph-drawing logic is placed in a reactive statement, this will only fire when one of the variables that the statement includes has updated. 
+      The reason for that is that the <code>afterUpdate</code> logic might fire more often that intended. 
 	</li>
 	<li>
-		We need to write an extra event listener for resize and do not very Svelt-y code inside 
-    the graph logic like 
+		We need to write an extra event listener for resize and some not very Svelt-y code inside 
+    the graph logic such as:
     <br>
-    <code>const width = container.getBoundingClientRect().width </code> when we 
+    <code>const width = container.getBoundingClientRect().width</code>, when we 
     could instead just bind the container's dimensions to variables which are then passed as props to the graph, 
     making it both cleaner and eliminating the need to use a resize event. 
 	</li>

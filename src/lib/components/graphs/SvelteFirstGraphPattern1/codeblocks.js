@@ -44,7 +44,6 @@ const codeblock = `
     bind:clientWidth={w}
     bind:clientHeight={h}
   >
-    <div class='graph-note'>resize window to see responsiveness</div>
     <svg width={w} height={h}>
       <g transform='translate({margin.left}, {margin.top})'>
         {#each data as d, i}

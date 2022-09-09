@@ -11,10 +11,10 @@
 		<span class='accent'>reactive declarations</span>.
 	</li>
 	<li>
-		The graph itself is defined entirely in D3, using a class-based graph template (thought it doesn't have to be class-based), 
+		The graph itself is defined entirely in D3, using a class-based graph template (though it doesn't have to be class-based), 
 		together with data and props. 
 		<br>
-		To "listen" for updates to the data or props 
+		To listen for updates to the data or props 
 		(in this example props only, but it would work the same way with the data),
 		we define the graph-drawing logic inside of a <span class='accent'>reactive statement</span>.
 		Svelte will only run the logic inside of the reactive statement when one or more of the variables 

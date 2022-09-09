@@ -1,5 +1,4 @@
 <script>
-	import { onMount, afterUpdate } from 'svelte';
 	import * as d3 from 'd3';
   import { appendSelect } from 'd3-appendselect';
   import _ from 'lodash';
@@ -19,7 +18,7 @@
   $: fill = w >= 500 ? '#6b6065' : '#ee3e3e'
 
 	// Scales 
-	// These need to be $ reactive declarations because they depend on w and h 
+	// These need to be $ reactive because they depend on w and h 
 	// If they didn't, we could have defined them as const 
 	$: xScale = d3.scaleLinear()
 		.domain([0, d3.max(data, d => d.number)])
@@ -31,7 +30,7 @@
 		.paddingInner(0.3)
 	
 	// Axes 
-	// Same reason as for scales, these need to be reactive decralations
+	// Same reason as for scales, these need to be reactive 
 	$: xAxis = d3.axisBottom(xScale)
 	$: yAxis = d3.axisLeft(yScale)
 

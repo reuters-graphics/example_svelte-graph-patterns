@@ -10,7 +10,7 @@
 	$: boundedWidth = w - margin.left - margin.right
 	$: boundedHeight = h - margin.top - margin.bottom
 	
-	// The graph props are reactive as they depend on other reactive declarations or variable
+	// The graph props are reactive as they depend on other reactive declarations or variables
 	$: props = {
 		width: w,
 		height: h,

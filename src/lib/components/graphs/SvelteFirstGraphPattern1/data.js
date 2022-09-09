@@ -1,28 +1,28 @@
 import _ from 'lodash-es';
 let data = [
 	{
-		id: 'ani',
-		name: "Ani",
+		id: 'alice',
+		name: "Alice",
 		number: 10
 	},
 	{
-		id: 'beniko',
-		name: "Beniko",
+		id: 'bob',
+		name: "Bob",
 		number: 20
 	},
 		{
-		id: 'clara',
-		name: "Clara",
+		id: 'calor',
+		name: "Carol",
 		number: 5
 	},
 	{
-		id: 'dobby',
-		name: "Dobby",
+		id: 'dave',
+		name: "Dave",
 		number: 30
 	},
 	{
-		id: 'eli',
-		name: "Eli",
+		id: 'eve',
+		name: "Eve",
 		number: 22
 	},
 	{

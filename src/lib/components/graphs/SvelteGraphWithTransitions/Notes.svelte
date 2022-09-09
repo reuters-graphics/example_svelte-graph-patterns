@@ -9,7 +9,7 @@
     The use case here is when we have dynamic data such that we want DOM elements corresponding to each datum 
     to have (possibly different) transitions as they enter, update in, or leave the DOM. In other words, we want to 
     imitate the transitions possible inside a D3 general update pattern with enter, update and exit, entirely from Svelte. 
-    Note that when adding the data-bound DOM elements in a svelte <code>each</code> block, you have to make sure that you can provide 
+    Note that when adding the data-bound DOM elements in a Svelte <code>each</code> block, you have to make sure that you can provide 
     a key with unique ids, i.e. you need to use a <span class='accent'>keyed each block</span>. 
   </li>
   <li>

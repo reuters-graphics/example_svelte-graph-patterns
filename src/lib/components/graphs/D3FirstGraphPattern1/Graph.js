@@ -25,11 +25,9 @@ class Chart {
   defaultData = [];
   defaultProps = {}
 	
-	// This is also supposed to be responsive
 	draw() {
-    const data = this.data();
+  	const data = this.data();
     const { width, height, margin, boundedWidth, boundedHeight, fill } = this.props();
-	console.log('logging from draw function', width, height)
 		
 		// Scales 
 		const xScale = d3.scaleLinear()
@@ -47,7 +45,6 @@ class Chart {
       .attr('width', width)
       .attr('height', height)
       .classed('svg', true)
-			//.style('background-color', 'pink')
 		const plot = svg
       .appendSelect('g.plot')
 			.attr('transform', `translate(${margin.left}, ${margin.top})`)
